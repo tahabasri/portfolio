@@ -7,8 +7,8 @@ Software Engineer.
 
 <div id="webaddress">
     <a href="mailto:tahabsri@gmail.com">tahabsri@gmail.com</a>
-|   <a href="https://www.linkedin.com/in/tahabasri/en">LinkedIn</a>
-|   <a href="https://github.com/tahabasri">Github</a>
+|   <a href="https://linkedin.com/in/tahabasri/en">linkedin.com/in/tahabasri</a>
+|   <a href="https://github.com/tahabasri">github.com/tahabasri</a>
 </div>
 
 ### Comfortable with
@@ -16,8 +16,8 @@ Software Engineer.
 --- | --- | ---
 Java / Java EE              |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
 Spring Boot / Helidon       |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL           |JavaScript                     |GraalVM
-                            |Android / Flutter              |
+Oracle DB / MySQL           |JavaScript                     |GraalVM / SubstrateVM
+                            |Dart / Flutter / Android       |
 
 ## Experience
 
@@ -45,10 +45,6 @@ Contribute to proposing and implementing detailed functional technical specifica
 
 ## Projects
 
-<a href="https://github.com/tahabasri/purge-some-logs" style="font-weight: bold;">purge-some-logs</a> (utility app)
-
-Designs a small yet robust utility to manage purging log files. Build using Java APIs, psl supports deleting, archiving and mailing old filtered logs with minimal configuration.
-
 __MQL Platform__ (school management app)
 
 Designed and implemented a Java web application with JSF & Primefaces UI for registration management, task planning and internship sessions tracking for master students.
@@ -56,6 +52,8 @@ Designed and implemented a Java web application with JSF & Primefaces UI for reg
 __ESTM LP__ (registration app)
 
 Developed a Java web application using JSF & Primefaces UI for candidature management. Easy to use, highly flexible and driven by a powerful decision oriented system, the application helped the school administration to manage the apply procedure, the selection of accepted students, the organization of criterias and results announcements.
+
+<br />
 
 ## Education
 

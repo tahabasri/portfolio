@@ -12,3 +12,6 @@ It contains :
 - layout files for main and resume pages
 - custom stylesheets to fit my desired output
 - markdown files which host content
+
+Notes related to print settings:
+- Custom margins : up [0.18°], right [0.21°], down [0.18°], left [0.21°]
