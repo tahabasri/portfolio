@@ -21,7 +21,7 @@ Oracle DB / MySQL           |JavaScript                     |GraalVM / Substrate
 
 ## Experience
 
-### Software Developer
+### Senior Member of Technical Staff
 
 __Oracle__, Casablanca - Morocco *(October 2019 to present)*
 
