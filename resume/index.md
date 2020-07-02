@@ -37,13 +37,15 @@ __CGI__, Fez - Morocco *(February 2018 to September 2019)*
 Designed and implemented features and improvements for multiple enterprise sized applications.
 Guaranteed the stability and efficiency of a large perimeter (4 enterprise applications).
 Offered functional and technical guidelines to customers in term of usability and maintainability of their applications.
-Designed a set of best practices to respect in development and testing phases in order to improve products quality.
-Contribute to proposing and implementing detailed functional technical specifications.
 
 ​**Technical Environment** Java, JavaEE, ZK, Spring, Hibernate, Maven, Jenkins, Git, Gerrit, JavaScript, Less, Linux, Perl, Apache Tomcat, Apache HTTP.
 
 
 ## Projects
+
+__take-a-hint__ (Java CLI framework)
+
+take-a-hint (a.k.a. Hint) is a tiny framework to change the look-and-feel of Java error messages. Giving the possibility to add hints on top of error message, final user can take-a-hint as quick as possible. Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
 
 __MQL Platform__ (school management app)
 
