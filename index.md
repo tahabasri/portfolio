@@ -16,9 +16,9 @@ Very comfortable working with : Java, Spring, Java EE technologies, Maven, Git, 
 
 #### [Resume](resume) | [LinkedIn](https://www.linkedin.com/in/tahabasri/en) | [Github](https://github.com/tahabasri) | [Mail](mailto:tahabsri@gmail.com)
 
-#### **Articles**
-{% for item in site.data.articles.articles %}
-<h5 style="margin-bottom: 0px;">{{ item.title }}</h5>
+#### **Activity**
+{% for item in site.data.activities.activities %}
+<h5 style="margin-bottom: 0px;">{{ item.title }} ({{ item.type }})</h5>
 {{ item.description }}
 <a target="_blank" href="{{ item.link }}" type="button" class="button">Read more</a>
 {% endfor %}

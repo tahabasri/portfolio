@@ -1,0 +1,9 @@
+activities:
+  - title: take-a-hint
+    type: project
+    description: A Java framework that changes the look-and-feel of Java error messages.
+    link: https://github.com/tahabasri/take-a-hint
+  - title: Manage Process as Code
+    type: article
+    description: The fundamentals about managing your process with code.
+    link: https://medium.com/swlh/manage-process-as-code-faa03e4c24c1
