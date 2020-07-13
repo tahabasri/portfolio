@@ -4,10 +4,24 @@
   <meta charset="UTF-8">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Portfolio</title>
   <link href="css/air.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div id="main">
     <div id="content">
+      <ul class="dropdown-holder">
+        <li class="dr-item"><a href="./" class="item-menu">Home <i class="fa fa-home" aria-hidden="true"></i></a></li>
+        <li class="dr-item"><a href="activity" class="item-menu">Activity <i class="fa fa-history" aria-hidden="true"></i></a></li>
+        <li class="dr-item"><a href="resume" class="item-menu">Resume <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn, item-menu">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+          <div class="dropdown-content">
+            <a href="https://www.linkedin.com/in/tahabasri/en" class="item-menu">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+            <a href="https://github.com/tahabasri" class="item-menu">Github <i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="mailto:tahabsri@gmail.com" class="item-menu">Mail <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+          </div>
+        </li>
+      </ul>
     {{ content }}
     </div>
   </div>
