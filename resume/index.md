@@ -53,7 +53,7 @@ Designed and implemented a Java web application with JSF & Primefaces UI for reg
 
 __ESTM LP__ (registration app)
 
-Developed a Java web application using JSF & Primefaces UI for candidature management. Easy to use, highly flexible and driven by a powerful decision oriented system, the application helped the school administration to manage the apply procedure, the selection of accepted students, the organization of criterias and results announcements.
+Developed a Java web application using JSF & Primefaces UI for candidature management. The application helped the school administration manage students applications, admission and results announcements.
 
 <br />
 
@@ -83,6 +83,9 @@ __Academic Excellence Award in Bachelor 2016__, *High School of Technology*, Mek
 
 __Academic Excellence Award in Higher National Diploma 2015__, *High School of Technology*, Meknes - Morocco
 
+## Certification
+
+__Oracle Certified Associate, Java SE 8 Programmer__
 
 <!-- ### Footer
 
