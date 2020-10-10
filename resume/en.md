@@ -50,11 +50,15 @@ Offered functional and technical guidelines to customers in term of usability an
 
 __take-a-hint__ (Java CLI framework)
 
-take-a-hint (a.k.a. Hint) is a Java framework to change the look-and-feel of Java error messages. It allows developers to offer final users direct hints without obliging them to seek documentation when facing errors. Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
+take-a-hint (a.k.a. Hint) is a Java framework to change the look-and-feel of Java error messages. It allows developers to offer final users direct hints without obliging them to seek documentation when facing errors.
+
+Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
 
 __Java Notebook Server__ (Java & Spring Boot project)
 
-A simple notebook server for executing pieces of code in an interpreter using Spring Boot. Link: <a href="https://github.com/tahabasri/java-spring-boot-notebook-server">https://github.com/tahabasri/java-spring-boot-notebook-server</a>
+A simple notebook server for executing pieces of code in an interpreter using Spring Boot.
+
+Link: <a href="https://github.com/tahabasri/java-spring-boot-notebook-server">https://github.com/tahabasri/java-spring-boot-notebook-server</a>
 
 <br />
 
