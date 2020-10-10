@@ -11,13 +11,17 @@ Software Engineer.
 |   <a href="https://github.com/tahabasri">github.com/tahabasri</a>
 </div>
 
+<br />
+
 ### Comfortable with
 
 --- | --- | ---
-Java / Java EE              |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
-Spring Boot / Helidon       |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL           |JavaScript                     |GraalVM / SubstrateVM
-                            |Dart / Flutter / Android       |
+Java / Java EE                          |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
+Spring Boot / Micronaut / Helidon       |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
+Oracle DB / MySQL                       |Vue.js / JavaScript            |GraalVM / SubstrateVM
+Docker                                  |Dart / Flutter / Android       |
+
+<br />
 
 ## Experience
 
@@ -25,35 +29,32 @@ Oracle DB / MySQL           |JavaScript                     |GraalVM / Substrate
 
 __Oracle__, Casablanca - Morocco *(October 2019 to present)*
 
-Designs highly stable applications to improve flow between existing system.
-Implements Process As Code style inside the system of maintaining GraalVM products for Oracle Labs.
-Helps in making major processes of planning, releasing and testing GraalVM products automated, versionable and maintainable.
+Designs highly stable applications to improve flow between existing systems at Oracle Labs.
+Implemented Process As Code to automate multiple systems for maintaining GraalVM products.
+Senior member of task force which targets releasing, packaging and testing GraalVM.
 
-​**Technical Environment** Java, GraalVM, Git, Maven, Helidon, JUnit, Docker, Atlassian Products.
+​**Technical Environment** Java, GraalVM, Git, Maven, Micronaut, Helidon, JUnit, Docker, Atlassian Products.
 
 ### Senior Java Developer
 __CGI__, Fez - Morocco *(February 2018 to September 2019)*
 
-Designed and implemented features and improvements for multiple enterprise sized applications.
-Guaranteed the stability and efficiency of a large perimeter (4 enterprise applications).
+Designed and implemented improvements and features for multiple enterprise sized applications.
+Guaranteed the stability and efficiency of a perimeter containing 4 large-scale enterprise applications.
 Offered functional and technical guidelines to customers in term of usability and maintainability of their applications.
 
 ​**Technical Environment** Java, JavaEE, ZK, Spring, Hibernate, Maven, Jenkins, Git, Gerrit, JavaScript, Less, Linux, Perl, Apache Tomcat, Apache HTTP.
 
+<br />
 
 ## Projects
 
 __take-a-hint__ (Java CLI framework)
 
-take-a-hint (a.k.a. Hint) is a tiny framework to change the look-and-feel of Java error messages. Giving the possibility to add hints on top of error message, final user can take-a-hint as quick as possible. Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
+take-a-hint (a.k.a. Hint) is a Java framework to change the look-and-feel of Java error messages. It allows developers to offer final users direct hints without obliging them to seek documentation when facing errors. Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
 
-__MQL Platform__ (school management app)
+__Java Notebook Server__ (Java & Spring Boot project)
 
-Designed and implemented a Java web application with JSF & Primefaces UI for registration management, task planning and internship sessions tracking for master students.
-
-__ESTM LP__ (registration app)
-
-Developed a Java web application using JSF & Primefaces UI for candidature management. The application helped the school administration manage students applications, admission and results announcements.
+A simple notebook server for executing pieces of code in an interpreter using Spring Boot. Link: <a href="https://github.com/tahabasri/java-spring-boot-notebook-server">https://github.com/tahabasri/java-spring-boot-notebook-server</a>
 
 <br />
 
@@ -71,6 +72,8 @@ __Higher National Diploma (Software Engineering)__ *Highest Honour*
 __Baccalaureate (Experimental sciences)__ *Honour*
 - Badr High School, Meknes - Morocco *(2012 to 2013)*
 
+<br />
+
 ## Honors & Awards
 
 __Top Talent "Juni'Or" 2018__, *CGI Morocco*, Fez - Morocco
@@ -82,6 +85,8 @@ __Academic Excellence Award in Master 2018__, *Faculty of Sciences Dhar Mahraz*,
 __Academic Excellence Award in Bachelor 2016__, *High School of Technology*, Meknes - Morocco
 
 __Academic Excellence Award in Higher National Diploma 2015__, *High School of Technology*, Meknes - Morocco
+
+<br />
 
 ## Certification
 

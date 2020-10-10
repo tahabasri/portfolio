@@ -1,11 +1,19 @@
 ---
 layout: main
-title: Taha BASRI's activity
+title: Taha BASRI | Activities
 ---
 
-#### **Activity**
 {% for item in site.data.activities.activities %}
-<h5 style="margin-bottom: 0px;">{{ item.title }} ({{ item.type }})</h5>
-{{ item.description }}
-<a target="_blank" href="{{ item.link }}" type="button" class="button">Read more</a>
+<div class="activities-container">
+	<div class="activity">
+		<div class="activity-preview {{ item.type | downcase }}">
+			<h6>{{ item.type }}</h6>
+			<h4>{{ item.title }}</h4>
+		</div>
+		<div class="activity-info">
+			<h5>{{ item.description }}</h5>
+            <a target="_blank" href="{{ item.link }}" type="button" class="btn">Read more</a>
+		</div>
+	</div>
+</div>
 {% endfor %}

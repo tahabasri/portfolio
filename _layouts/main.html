@@ -2,28 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> {% if page.title %} {{ page.title }} | {% endif %} Portfolio</title>
+  <title>{{ page.title }}</title>
   <link href="css/air.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% if page.title contains 'Activities' %}
+    <link href="css/cards.css" type="text/css" rel="stylesheet">
+  {% endif %}
+  <style>
+    body{
+      background-image: url("rsc/background.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #53a4b7;
+    }
+  </style>
 </head>
 <body>
   <div id="main">
     <div id="content">
-      <ul class="dropdown-holder">
-        <li class="dr-item"><a href="./" class="item-menu">Home <i class="fa fa-home" aria-hidden="true"></i></a></li>
-        <li class="dr-item"><a href="activity" class="item-menu">Activity <i class="fa fa-history" aria-hidden="true"></i></a></li>
-        <li class="dr-item"><a href="resume" class="item-menu">Resume <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        <li class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn, item-menu">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
-          <div class="dropdown-content">
-            <a href="https://www.linkedin.com/in/tahabasri/en" class="item-menu">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-            <a href="https://github.com/tahabasri" class="item-menu">Github <i class="fa fa-github" aria-hidden="true"></i></a>
-            <a href="mailto:tahabsri@gmail.com" class="item-menu">Mail <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
-          </div>
-        </li>
-      </ul>
+      <div class="dropdown-container">
+        <ul class="dropdown-holder">
+          <li class="dr-item {% if page.title contains 'Home' %} active {% endif %}"><a href="./" class="item-menu">Home</a></li>
+          <li class="dr-item {% if page.title contains 'Activities' %} active {% endif %}"><a href="activity" class="item-menu">Activity</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn, item-menu">Contact <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+            <div class="dropdown-content">
+              <a target="_blank" href="https://www.linkedin.com/in/tahabasri/en" class="item-menu">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+              <a target="_blank" href="https://github.com/tahabasri" class="item-menu">Github <i class="fa fa-github" aria-hidden="true"></i></a>
+              <a target="_blank" href="mailto:tahabsri@gmail.com" class="item-menu">Mail <i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+            </div>
+          </li>
+          <li class="dr-item right"><a target="_blank" href="resume" class="item-menu">Resume <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
     {{ content }}
     </div>
   </div>
+
+  {% if page.title contains 'Home' %}
+    <p class="footer">Theme : <a href="https://github.com/markdowncss/air">Air</a>, or checkout my <a href="https://github.com/tahabasri/portfolio">custom version</a>.</p>
+  {% endif %}
 </body>
 </html>

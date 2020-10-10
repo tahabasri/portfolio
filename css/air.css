@@ -1,65 +1,6 @@
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
-
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: "";
-  }
-
-  pre,
-  blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
-
-  img {
-    max-width: 100% !important;
-  }
-
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
-
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-}
-  
 html {
   font-size: 12px;
+  height: 100%;
 }
 
 @media screen and (min-width: 32rem) and (max-width: 48rem) {
@@ -154,24 +95,19 @@ textarea {
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
 
 body {
-  color: #444;
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  color: rgb(26, 26, 26);
+  font-family: 'Roboto', 'Open Sans', Helvetica, sans-serif;
   font-weight: 300;
-  margin: 1rem auto 1rem;
-  max-width: 60rem;
+  margin: 0;
   text-align: center;
 }
 
 img {
   border-radius: 50%;
   height: 200px;
-  margin: 0 auto;
+  margin: 50px auto 0;
   width: 200px;
-}
-
-a,
-a:visited {
-  color: #3498db;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 a:hover,
@@ -187,10 +123,6 @@ pre {
 }
 
 blockquote {
-  margin: 0;
-  /*border-left: 5px solid #7a7a7a;*/
-  font-style: italic;
-  padding: 0.2em;
   text-align: center;
 }
 
@@ -198,10 +130,6 @@ ul,
 ol,
 li {
   text-align: left;
-}
-
-p {
-  color: #777;
 }
 
 .button {
@@ -220,17 +148,24 @@ p {
 }
 
 /* Dropdown menu */
+
+.dropdown-container {
+  background-color: #333;
+}
+
 ul.dropdown-holder {
   list-style-type: none;
-  margin: 0;
-  margin-bottom: 30px;
+  margin: 0 25%;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
 }
 
 li.dr-item {
   float: left;
+}
+
+li.right {
+  float: right;
 }
 
 a.item-menu, .dropbtn {
@@ -246,8 +181,12 @@ li a.item-menu:hover, a.dropdown:hover, .dropdown:hover .dropbtn {
   background-color: #3498db;
 }
 
+li.active{
+  background-color: #005c99;
+}
+
 li.dropdown {
-  display: inline-block;
+  float: right;
 }
 
 .dropdown-content {
@@ -273,4 +212,11 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
