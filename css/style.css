@@ -1,0 +1,93 @@
+/*
+ * custom bootstrap styles
+ */
+
+ html {
+    scroll-behavior: smooth !important;
+  }
+  
+  body {
+   background-color: #1d1b24;
+  }
+  
+  .container {
+    max-width: 960px;
+  }
+  
+  .site-header {
+    background-color: rgba(0, 0, 0, .80) !important;
+    -webkit-backdrop-filter: saturate(180%) blur(20px) !important;
+    backdrop-filter: saturate(180%) blur(20px) !important;
+  }
+  
+  /* override green colors to more techy blu-ish green */
+  
+  .border-success {
+    border-color: #53f6c7!important;
+  }
+  
+  .text-success{
+    color: #53f6c7 !important;
+  }
+  
+  .jumbotron {
+    padding: 1rem 2rem;
+    background-color: #2a2830;
+  }
+  
+  .carousel{
+    background: #2f4357;
+    margin-top: 20px;
+  }
+  
+  .carousel-item {
+    min-height: 175px;
+  }
+  
+  /*
+   * custom styles
+   */
+  
+  .banner-bg{
+    background-image: url("../rsc/wallpaper.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .profil{
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #53f6c7;
+    border-width: 2px;
+    height: 200px;
+    margin: 50px auto 0;
+    width: 200px;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .post {
+    width: 80%;
+    height: 200px;
+    border-radius: 21px 21px 0 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      -ms-flex: 1;
+      flex: 1;
+    }
+  }
+  
+  .overflow-hidden { overflow: hidden; }
