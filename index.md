@@ -36,7 +36,7 @@ title: Taha BASRI · Portfolio
       <p class="display-6 mb-0">{{ posts[0].type }}</p>
       <h2 class="display-5">{{ posts[0].title }}</h2>
       <p class="lead">{{ posts[0].description }}</p>
-      <a target="_blank" href="{{ post1.link }}" class="btn btn-primary">Go to the {{ posts[0].type | downcase }}</a>
+      <a target="_blank" href="{{ posts[0].link }}" class="btn btn-primary">Go to the {{ posts[0].type | downcase }}</a>
     </div>
     <div class="bg-light shadow-sm mx-auto post" style="background-image: url('{{ posts[0].img }}');"></div>
   </div>
@@ -45,7 +45,7 @@ title: Taha BASRI · Portfolio
       <p class="display-6 mb-0">{{ posts[1].type }}</p>
       <h2 class="display-5">{{ posts[1].title }}</h2>
       <p class="lead">{{ posts[1].description }}</p>
-      <a target="_blank" href="{{ post1.link }}" class="btn btn-primary">Go to the {{ posts[1].type | downcase }}</a>
+      <a target="_blank" href="{{ posts[1].link }}" class="btn btn-primary">Go to the {{ posts[1].type | downcase }}</a>
     </div>
     <div class="bg-dark shadow-sm mx-auto post" style="background-image: url('{{ posts[1].img }}');"></div>
   </div>
