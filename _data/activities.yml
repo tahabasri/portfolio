@@ -1,4 +1,9 @@
 activities:
+  - title: Can’t Find the Perfect Email Signature? Code Your Own!
+    type: article
+    description: Most basic guide to generate email signature using HTML and CSS.
+    link: https://medium.com/swlh/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362
+    img : https://miro.medium.com/max/1000/1*2uSte01UauqJYge1JmiRTg.jpeg
   - title: take-a-hint
     type: project
     description: A Java framework that changes the look-and-feel of Java error messages.
