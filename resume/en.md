@@ -18,7 +18,7 @@ Software Engineer.
 --- | --- | ---
 Java / Java EE                          |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
 Spring Boot / Micronaut / Helidon       |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL                       |Vue.js / JavaScript            |GraalVM / SubstrateVM
+Oracle DB / MySQL                       |TypeScript / JavaScript            |GraalVM / SubstrateVM
 Docker                                  |Dart / Flutter / Android       |
 
 <br />
@@ -48,17 +48,17 @@ Offered functional and technical guidelines to customers in term of usability an
 
 ## Projects
 
+__Snippets for VSCode__ (VSCode extension)
+
+VSCode extension for managing code snippets.
+
+Link: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a>
+
 __take-a-hint__ (Java CLI framework)
 
 take-a-hint (a.k.a. Hint) is a Java framework to change the look-and-feel of Java error messages. It allows developers to offer final users direct hints without obliging them to seek documentation when facing errors.
 
 Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
-
-__Java Notebook Server__ (Java & Spring Boot project)
-
-A simple notebook server for executing pieces of code in an interpreter using Spring Boot.
-
-Link: <a href="https://github.com/tahabasri/java-spring-boot-notebook-server">https://github.com/tahabasri/java-spring-boot-notebook-server</a>
 
 <br />
 

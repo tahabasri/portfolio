@@ -18,7 +18,7 @@ Ingénieur logiciel.
 --- | --- | ---
 Java / Java EE                          |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
 Spring Boot / Micronaut / Helidon       |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL                       |Vue.js / JavaScript            |GraalVM / SubstrateVM
+Oracle DB / MySQL                       |TypeScript / JavaScript            |GraalVM / SubstrateVM
 Docker                                  |Dart / Flutter / Android       |
 
 <br />
@@ -48,17 +48,17 @@ Offrir des directives fonctionnelles et techniques aux clients en termes d'utili
 
 ## Projets
 
+__Snippets for VSCode__ (Extension VSCode)
+
+Extension VSCode pour gérer les bouts de code.
+
+Lien: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a>
+
 __take-a-hint__ (Framework Java pour ligne de commande)
 
 take-a-hint (Hint) est un framework Java pour changer l'apparence des messages d'erreur Java. Il permet aux développeurs d'offrir des conseils directs aux utilisateurs finaux sans les obliger à rechercher de la documentation lorsqu'ils sont confrontés à des erreurs.
 
 Lien: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a>
-
-__Java Notebook Server__ (Projet Java & Spring Boot)
-
-Un serveur de notebook simple pour exécuter des morceaux de code dans un interpréteur distant à l'aide de Spring Boot.
-
-Lien: <a href="https://github.com/tahabasri/java-spring-boot-notebook-server">https://github.com/tahabasri/java-spring-boot-notebook-server</a>
 
 <br />
 
