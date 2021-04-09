@@ -1,4 +1,9 @@
 activities:
+  - title: Snippets for VSCode
+    type: project
+    description: VSCode extension for managing your code snippets without quitting your editor.
+    link: https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets
+    img : https://raw.githubusercontent.com/tahabasri/snippets/main/images/logo/logo.png
   - title: Can’t Find the Perfect Email Signature? Code Your Own!
     type: article
     description: Most basic guide to generate email signature using HTML and CSS.
