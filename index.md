@@ -8,7 +8,7 @@ title: Taha BASRI · Portfolio
     <p><img class="profil" src="rsc/profil.jpg" alt="Me, when I am prepared for a picture"/></p>
     <h1 class="display-4 font-weight-normal text-light">Taha BASRI</h1>
     <p class="lead font-weight-normal text-light">
-      Software engineer at Oracle, experienced in mostly all phases of software development process.
+      Software engineer, experienced in mostly all phases of software development process.
       <br/>Very comfortable working with : Java, Spring, Microservices, CLIs, automation, and many more.</p>
     <a class="btn btn-dark text-success" href="#activitiesSection">What do I do ?</a>
   </div>
@@ -74,7 +74,7 @@ title: Taha BASRI · Portfolio
       <div class="card-body">
         <h5 class="card-title">Top Talent "Juni'Or"</h5>
         <span class="badge badge-danger">CGI Morocco</span>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+        <p class="card-text"></p>
       </div>
       <div class="card-footer">
         <small class="text-muted">Oct. 2018</small>
