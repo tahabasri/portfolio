@@ -1,8 +1,8 @@
 # portfolio files
 
-This branch is the result of the output : https://tahabasri.github.io/portfolio-markdown
+This branch is the result of the output : https://tahabasri.com
 
-Run
+Quickly getting started :
 ```
 bundle install
 jekyll build
@@ -19,7 +19,7 @@ Basics to know in order to improve or modify:
 It contains :
 - layout files for main pages and resume
 - custom stylesheets to fit my desired output
-- markdown files which host content
+- markdown files which host resume content
 
-Notes related to print settings:
+Notes related to resume print settings:
 - Custom margins I use for optimal space usage : up [0.18°], right [0.21°], down [0.18°], left [0.21°]
