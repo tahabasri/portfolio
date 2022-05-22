@@ -6,84 +6,293 @@
     <meta name="description" content="Taha BASRI's Portfolio">
     <meta name="author" content="Taha BASRI">
     <title>{{ page.title }}</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Moved js scrips to the top to fix Carousel loading issue -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg site-header sticky-top navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand px-4" href="#">Taha B.</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item px-4 {% if page.title contains 'Portfolio' %} active {% endif %}">
-              <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item px-4 {% if page.title contains 'Activities' %} active {% endif %}">
-              <a class="nav-link" href="activity">Activities</a>
-            </li>
-            {% if page.title contains 'Portfolio' %}
-            <li class="nav-item px-4">
-              <a class="nav-link" href="#contactSection">Contact</a>
-            </li>
-            {% endif %}
-            <li class="d-none d-md-inline-block px-4 dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Resume
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a target="_blank" href="resume/en" class="dropdown-item">English <i class="fa fa-external-link" aria-hidden="true"></i></a>
-                <a target="_blank" href="resume/fr" class="dropdown-item">French <i class="fa fa-external-link" aria-hidden="true"></i></a>
-              </div>
-            </li>
-          </ul>
+    <div id="loading">
+        <div id="spinner"></div>
+    </div>
+    <header id="header" class="animated slideInDown" style="animation-delay:0.2s;">
+        <table>
+            <tr>
+                <td id="logo">Taha Basri</td>
+                <td id="navigation">
+                    <a href="#bio-anchor">about</a>
+                    <a href="#work-anchor">work</a>
+                    <a href="#contact-anchor">contact</a>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <table id="top_part">
+        <tr>
+            <td id="about" class="animated slideInLeft" style="animation-delay:0.5s;">
+                <h1 id="welcomeTitle">TAHA HERE !</h1>
+                <h2>I'm a Software Engineer, Entrepreneur, Junior Instructor & Cooking Guru!</h2>
+                <a class="btn_one" href="#bio-anchor">What do I do ?</a><br>
+                <table>
+                    <tr style="columns: 3;">
+                        <td class="animated zoomIn" style="animation-delay:0.2s;"><a class="social"
+                          target="_blank" href="https://www.facebook.com/TheTahaBasri/"><i class="fab fa-facebook"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:0.4s;"><a class="social"
+                          target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-twitter"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:0.6s;"><a class="social"
+                          target="_blank" href="https://www.instagram.com/thetahabasri"><i class="fab fa-instagram"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:0.8s;"><a class="social"
+                          target="_blank" href="https://www.linkedin.com/in/tahabasri/"><i class="fab fa-linkedin"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:1.0s;"><a class="social"
+                          target="_blank" href="https://tahabasri.medium.com/"><i class="fab fa-medium"></i></a></td>
+                        <td class="animated zoomIn" style="animation-delay:1.0s;"><a class="social"
+                          target="_blank" href="https://github.com/tahabasri"><i class="fab fa-github"></i></a></td>
+                    </tr>
+                </table>
+            </td>
+            <td id="rightImageContainer" class="animated" style="animation-delay:0.2s;">
+                <div id="rightImage"></div>
+            </td>
+        </tr>
+    </table>
+    <div class="anchor" id="bio-anchor"></div>
+    <div id="bio">
+        <h1>about</h1>
+        <h2>I may help you with :</h2>
+        <div id="sections">
+            <div>
+                <a class="icon"><i class="fas fa-file-code fa-5x"></i></a>
+                <h3>Software Development</h3>
+                <p>3+ years of professional experience at <img src="../img/comp_CGI_logo.png" width="35px" /> , <img
+                        src="../img/comp_ORACLE_logo.png" width="100px" /> and <img src="../img/comp_SALESFORCE_logo.png"
+                        style="position: relative; top: 5px;" width="100px" />.</p>
+            </div>
+            <div>
+                <a class="icon"><i class="fas fa-shopping-cart fa-5x"></i></a>
+                <h3>e-commerce</h3>
+                <p>From finding the best product for your target market to successful scaling 🚀</p>
+            </div>
+            <div>
+                <a class="icon"><i class="fas fa-paint-brush fa-5x"></i></a>
+                <h3>Design</h3>
+                <p>I opened my first Photoshop project in 2009, can't say more 😅</p>
+            </div>
         </div>
-      </div>
-    </nav>
-
-{{ content }}
-
-<footer class="container py-5">
-  <div class="row">
-    <div class="col-6 col-md">
-      <h5 class="text-success">This website</h5>
-      <p class="text-small text-muted">
-        The code behind this website is open-source, you can check it out
-        <a class="text-success" target="_blank" href="https://github.com/tahabasri/portfolio">here</a>.
-        <br/>Feel free to fork it as you like 👍.
-      </p>
+        <h2>Want a resume ?</h2> Check my <a class="btn_social" target="_blank" href="resume/en">resume</a> or its <a class="btn_social" target="_blank" href="resume/fr">french version</a>.
     </div>
-    <div class="col-6 col-md">
-      <h5 class="text-success">Resources</h5>
-      <ul class="list-unstyled text-small">
-        {% if page.title contains 'Activities' %}
-        <li><a class="text-muted" href="./">Home</a></li>
-        {% else %}
-        <li><a class="text-muted" href="activity">Activites</a></li>
-        {% endif %}
-        <li><a class="text-muted" target="_blank" href="resume/en">Resume (EN) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-        <li><a class="text-muted" target="_blank" href="resume/fr">Resume (FR) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
-      </ul>
+    <div class="anchor" id="work-anchor"></div>
+    <div id="work">
+        <h1>work</h1>
+        <h2>During my time using a 🖱️ and a ⌨️, I managed to :</h2>
+        <div id="album-rotator-container">
+            <div id="album-rotator">
+                <div id="album-rotator-holder">
+                    <a target="_blank" class="album-item" href="https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets">
+                        <span class="album-details">
+                            <span class="album-item-icon"><i class="fas fa-code"></i> Code</span>
+                            <span class="title">Snippets</span>
+                            <span class="subtitle">VSCode Extension</span>
+                            <span class="subtext">On VSCode</span>
+                        </span>
+                    </a>
+                    <a target="_blank" class="album-item" href="https://medium.com/swlh/manage-process-as-code-faa03e4c24c1">
+                        <span class="album-details">
+                            <span class="album-item-icon"><i class="fas fa-pen"></i> Write</span>
+                            <span class="subtitle">Manage Process as Code</span>
+                            <span class="subtext">On Medium</span>
+                        </span>
+                    </a>
+                    <a target="_blank" class="album-item" href="https://github.com/tahabasri/take-a-hint">
+                        <span class="album-details">
+                            <span class="album-item-icon"><i class="fas fa-code"></i> Code</span>
+                            <span class="subtitle">a tiny CLI Java framework</span>
+                            <span class="subtext">On Github</span>
+                        </span>
+                    </a>
+                    <a target="_blank" class="album-item" href="https://medium.com/swlh/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362">
+                        <span class="album-details">
+                            <span class="album-item-icon"><i class="fas fa-pen"></i> Write</span>
+                            <span class="subtitle subtitle-small-text">How to code your email signature</span>
+                            <span class="subtext">On Medium</span>
+                        </span>
+                    </a>
+                    <a class="album-item" href="https://twitter.com/smpnjn">
+                        <span class="album-details">
+                            <span class="title">And</span>
+                            <span class="subtitle">Finally..</span>
+                            <span class="subtext">we're not yet done 💪</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <br/>
     </div>
-    <div class="col-6 col-md">
-      <h5 class="text-success">About</h5>
-      <ul class="list-unstyled text-small">
-        <li><a class="text-muted" target="_blank" href="https://www.linkedin.com/in/tahabasri/en">LinkedIn <i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-        <li><a class="text-muted" target="_blank" href="https://github.com/tahabasri">Github <i class="fa fa-github" aria-hidden="true"></i></a></li>
-        <li><a class="text-muted" target="_blank" href="https://twitter.com/TheTahaBasri">Twitter <i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        <li><a class="text-muted" target="_blank" href="mailto:tahabsri@gmail.com">Mail <i class="fa fa-paper-plane" aria-hidden="true"></i></li>
-      </ul>
+    <div class="anchor" id="contact-anchor"></div>
+    <div id="contact">
+        <h1>contact</h1>
+        <table>
+            <tr>
+                <td id="leftImageContainer" class="animated">
+                    <div id="leftImage"></div>
+                </td>
+                <td>
+                    <div id="inner_div">
+                        <table id="inner_table">
+                            <tr>
+                                <td>If you want to send a personal message you can find Taha on 
+                                    <a class="btn_social" href="https://www.instagram.com/thetahabasri" target="_blank"> Instagram</a>
+                                    & 
+                                    <a class="btn_social" href="https://twitter.com/thetahabasri" target="_blank"> Twitter</a>.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    For collaborations, business inquiries, and interviews send an email to:
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="mailto:tahabsri@gmail.com" id="address">tahabsri@gmail.com</a><i id="arrow" class="fas fa-mouse-pointer fa-4x"></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
-  </div>
-</footer>
+    <div id="footer">
+        <div id="footer-social">
+            <a class="social" target="_blank" href="https://www.facebook.com/TheTahaBasri/"><i class="fab fa-facebook"></i></a>
+            <a class="social" target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-twitter"></i></a>
+            <a class="social" target="_blank" href="https://www.instagram.com/thetahabasri"><i class="fab fa-instagram"></i></a>
+            <a class="social" target="_blank" href="https://www.linkedin.com/in/tahabasri/"><i class="fab fa-linkedin"></i></a>
+            <a class="social" target="_blank" href="https://tahabasri.medium.com/"><i class="fab fa-medium"></i></a>
+            <a class="social" target="_blank" href="https://github.com/tahabasri"><i class="fab fa-github"></i></a>
+        </div>
+        <p>Feel free to use this <a href="https://github.com/tahabasri/portfolio">website template</a> as you like 👍.</p>
+    </div>
+    <script src="scripts/index.js" type="module"></script>
+    <script id="noise" type="x-shader/x-fragment">
+        #define NUM_OCTAVES 5
+        
+        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+        
+        float rand(float n){return fract(sin(n) * 43758.5453123);}
+        float rand(vec2 n) { 
+            return fract(sin(dot(n, vec2(12.9898, 4.1414))) * 43758.5453);
+        }
+        float noise(float p){
+            float fl = floor(p);
+        float fc = fract(p);
+            return mix(rand(fl), rand(fl + 1.0), fc);
+        }
+        float noise(vec2 n) {
+            const vec2 d = vec2(0.0, 1.0);
+        vec2 b = floor(n), f = smoothstep(vec2(0.0), vec2(1.0), fract(n));
+            return mix(mix(rand(b), rand(b + d.yx), f.x), mix(rand(b + d.xy), rand(b + d.yy), f.x), f.y);
+        }
+        
+        float snoise(vec2 v) {
+            const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+                                0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+                                -0.577350269189626,  // -1.0 + 2.0 * C.x
+                                0.024390243902439); // 1.0 / 41.0
+            vec2 i  = floor(v + dot(v, C.yy) );
+            vec2 x0 = v -   i + dot(i, C.xx);
+            vec2 i1;
+            i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+            vec4 x12 = x0.xyxy + C.xxzz;
+            x12.xy -= i1;
+            i = mod289(i); // Avoid truncation effects in permutation
+            vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+                + i.x + vec3(0.0, i1.x, 1.0 ));
+        
+            vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+            m = m*m ;
+            m = m*m ;
+            vec3 x = 2.0 * fract(p * C.www) - 1.0;
+            vec3 h = abs(x) - 0.5;
+            vec3 ox = floor(x + 0.5);
+            vec3 a0 = x - ox;
+            m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+            vec3 g;
+            g.x  = a0.x  * x0.x  + h.x  * x0.y;
+            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+            return 130.0 * dot(m, g);
+        }
+        const mat2 m2 = mat2(0.8,-0.6,0.6,0.8);
+        
+        #define NB_OCTAVES 8
+        #define LACUNARITY 10.0
+        #define GAIN 0.5
+        
+        float fbm(in vec2 p) {
+            float total = 0.0,
+                frequency = 1.0,
+                amplitude = 1.0;
+            
+            for (int i = 0; i < NB_OCTAVES; i++) {
+                total += snoise(p * frequency) * amplitude;
+                frequency *= LACUNARITY;
+                amplitude *= GAIN;
+            }    
+            return total;
+        }
+    </script>
+    <script id="vertex" type="x-shader/x-fragment">
+        uniform float u_time;
+        uniform float u_height;
+        uniform vec2 u_rand;
+        
+        float xDistortion;
+        float yDistortion;
+        
+        varying float vDistortion;
+        varying vec2 vUv;
+        
+        void main() {
+            vUv = uv;
+            vDistortion = snoise(vUv.xx * 3. - vec2(u_time / u_rand.x, u_time / u_rand.x) + cos(vUv.yy) * u_rand.y) * u_height;
+            xDistortion = snoise(vUv.xx * 1.) * u_height * u_rand.x / 10.;
+            vec3 pos = position;
+            pos.z += (vDistortion * 55.);
+            pos.x += (xDistortion * 55.);
+            pos.y += (sin(vUv.y) * 55.);
+            
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+    </script>
+    <script id="fragment" type="x-shader/x-fragment">
+        vec3 rgb(float r, float g, float b) {
+            return vec3(r / 255., g / 255., b / 255.);
+        }
+        vec3 rgb(float c) {
+            return vec3(c / 255., c / 255., c / 255.);
+        }
+        
+        uniform vec3 u_lowColor;
+        uniform vec3 u_highColor;
+        uniform float u_time;
+        
+        varying vec2 vUv;
+        varying float vDistortion;
+        varying float xDistortion;
+        
+        void main() {
+            vec3 highColor = rgb(u_highColor.r, u_highColor.g, u_highColor.b);
+            
+            vec3 colorMap = rgb(u_lowColor.r, u_lowColor.g, u_lowColor.b);
+        
+            colorMap = mix(colorMap, highColor, vDistortion);
+            
+            gl_FragColor = vec4(colorMap, 1.);
+        }
+    </script>
 </body>
 </html>

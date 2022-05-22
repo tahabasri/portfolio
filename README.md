@@ -1,6 +1,13 @@
 # portfolio files
 
-This branch is the result of the output : https://tahabasri.github.io/portfolio
+This branch is the result of the output : https://tahabasri.github.io/portfolio-markdown
+
+Run
+```
+bundle install
+jekyll build
+jekyll serve
+```
 
 Basics to know in order to improve or modify:
 - https://getbootstrap.com/
