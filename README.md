@@ -22,4 +22,6 @@ It contains :
 - markdown files which host resume content
 
 Notes related to resume print settings:
-- Custom margins I use for optimal space usage : up [0.18°], right [0.21°], down [0.18°], left [0.21°]
+- Paper Size : A4
+- Scale : 78
+- Custom margins I use for optimal space usage : up [0.18°], right [0.21°], down [0.18°], left [0.18°]

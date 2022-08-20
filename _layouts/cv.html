@@ -1,10 +1,11 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title> {% if page.title %} {{ page.title }} | {% endif %} CV</title>
   <link href="media/{{ site.style }}-screen.css" type="text/css" rel="stylesheet" media="screen">
   <link href="media/{{ site.style }}-print.css" type="text/css" rel="stylesheet" media="print">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="main">
@@ -13,4 +14,25 @@
     </div>
   </div>
 </body>
+<script>
+  function localize(language) {
+    $("[lang]").each(function () {
+        if ($(this).attr("lang") == language)
+            $(this).show();
+        else
+            $(this).hide();
+    });
+  }
+  
+  // auto-detect the best lang setting
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has('lang')) {
+    $('html').attr('lang', params.get('lang'));
+  } else if (navigator.language.match(/^(en|fr)/)) {
+    $('html').attr('lang', navigator.language.substr(0, 2));
+  }
+
+  localize($('html').attr('lang'));
+</script>
 </html>
