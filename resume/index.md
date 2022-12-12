@@ -164,4 +164,5 @@ Offrir des directives fonctionnelles et techniques aux clients en termes d'utili
 <h2 lang="fr">Certification</h2>
 
 <p><strong>Salesforce Administrator</strong></p>
+<p><strong>Salesforce Platform App Builder</strong></p>
 <p><strong>Oracle Certified Associate, Java SE 8 Programmer</strong></p>
