@@ -163,6 +163,7 @@ Offrir des directives fonctionnelles et techniques aux clients en termes d'utili
 <h2 lang="en">Certification</h2>
 <h2 lang="fr">Certification</h2>
 
+<p><strong>Salesforce Certified JavaScript Developer I</strong></p>
 <p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
 <p><strong>Salesforce Administrator</strong></p>
 <p><strong>Salesforce Platform App Builder</strong></p>
