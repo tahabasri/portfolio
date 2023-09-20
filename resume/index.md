@@ -22,7 +22,7 @@ Java / Java EE / Android                 |Spring MVC / JSF / ZK          |Git / 
 Spring Boot / Micronaut / Helidon        |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
 Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / Native Image
 Salesforce CRM                           |Salesforce Commerce Cloud       |Apex / LWC
-Lightning Web Runtime                           |Loyalty, Rebate & Automotive       | Experience Cloud
+Lightning Web Runtime                           |Loyalty / Rebate / Automotive       | Experience Cloud
 
 <br />
 
@@ -36,8 +36,8 @@ Lightning Web Runtime                           |Loyalty, Rebate & Automotive   
 <p lang="en"><strong>Salesforce</strong>, Casablanca - Morocco <em>(November 2021 to present)</em></p>
 <p lang="fr"><strong>Salesforce</strong>, Casablanca - Maroc <em>(Novembre 2021 au présent)</em></p>
 
-<p lang="en">Design and deliver SaaS solutions using Salesforce Sales Cloud and Salesforce Commerce technologies. Create guided and customized solutions for industry-specific needs and solve complex problems. Improve technical quality thanks to a strong experience in the development and maintenance of Salesforce Commerce Cloud technologies.</p>
-<p lang="fr">Concevoir et fournir des solutions SaaS à l'aide des technologies Salesforce Sales Cloud et Salesforce Commerce. Créer des solutions guidées et personnalisées pour les besoins spécifiques à l'industrie et résoudre les problèmes complexes. Améliorer la qualité technique grâce à une forte expérience dans le développement et la maintenance des technologies Salesforce Commerce Cloud.</p>
+<p lang="en">Designed and delivered SaaS solutions using Salesforce Sales Cloud and Salesforce Commerce technologies. Crafted guided and customized solutions for industry-specific needs and solved complex problems. Elevated technical standards through extensive experience in developing and maintaining Salesforce Commerce Cloud technologies.</p>
+<p lang="fr">Conçu et déployé des solutions SaaS en exploitant les technologies Salesforce Sales Cloud et Salesforce Commerce. Créé des solutions personnalisées et orientées vers des besoins spécifiques à l'industrie, et résolu des problèmes complexes. Amélioré la qualité technique grâce à une solide expérience dans le développement et la maintenance des technologies Salesforce Commerce Cloud.</p>
 
 <p lang="en">​<strong>Technical Environment</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
 <p lang="fr">​<strong>Environnement technique</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
@@ -50,12 +50,8 @@ Lightning Web Runtime                           |Loyalty, Rebate & Automotive   
 <p lang="en"><strong>Oracle</strong>, Casablanca - Morocco <em>(October 2019 to October 2021)</em></p>
 <p lang="fr"><strong>Oracle</strong>, Casablanca - Maroc <em>(Octobre 2019 au Octobre 2021)</em></p>
 
-<p lang="en">Designs highly stable applications to improve flow between existing systems at Oracle Labs.
-Implemented Process As Code to automate multiple systems for maintaining GraalVM products.
-Senior member of task force which targets releasing, packaging and testing GraalVM.</p>
-<p lang="fr">Développe des applications hautement stables pour améliorer le flux entre les systèmes d'Oracle Labs.
-Implémentation de processus en tant que code 'Process As Code' pour automatiser plusieurs systèmes de maintenance des produits GraalVM.
-Membre senior de l'équipe résponsable du packaging, le release et les tests de GraalVM.</p>
+<p lang="en">Designed robust applications to enhance the integration between pre-existing systems at Oracle Labs. Implemented Process-as-Code methodologies to automate various systems for the maintenance of GraalVM products. Served as a senior member of a task force dedicated to the release, packaging, and testing of GraalVM.</p>
+<p lang="fr">Conception d'applications hautement stables visant à améliorer l'intégration entre les systèmes existants au sein d'Oracle Labs. Mise en place de méthodologies de Processus en tant que Code pour automatiser divers systèmes dans le cadre de la maintenance des produits GraalVM. En tant que membre senior d'une équipe dédiée, participation à la planification, au conditionnement et aux tests de GraalVM.</p>
 
 <p lang="en">​<strong>Technical Environment</strong> Java, GraalVM, Git, Maven, Micronaut, Helidon, JUnit, Docker, Atlassian Products.</p>
 <p lang="fr">​<strong>Environnement technique</strong> Java, GraalVM, Git, Maven, Micronaut, Helidon, JUnit, Docker, produits Atlassian.</p>
@@ -68,12 +64,8 @@ Membre senior de l'équipe résponsable du packaging, le release et les tests de
 <p lang="en"><strong>CGI</strong>, Fez - Morocco <em>(February 2018 to September 2019)</em></p>
 <p lang="fr"><strong>CGI</strong>, Fès - Maroc <em>(Février 2018 à Septembre 2019)</em></p>
 
-<p lang="en">Designed and implemented improvements and features for multiple enterprise sized applications.
-Guaranteed the stability and efficiency of a perimeter containing 4 large-scale enterprise applications.
-Offered functional and technical guidelines to customers in term of usability and maintainability of their applications.</p>
-<p lang="fr">Conception et implémentation de plusieurs améliorations et fonctionnalités pour plusieurs applications d'entreprise.
-Garantie de la stabilité et de l'efficacité d'un périmètre contenant 4 applications d'entreprise à grande échelle.
-Offrir des directives fonctionnelles et techniques aux clients en termes d'utilisabilité et de maintenabilité de leurs applications.</p>
+<p lang="en">Designed and implemented enhancements and new features for several large-scale enterprise applications. Ensured the stability and efficiency of a domain housing four major enterprise applications. Provided customers with functional and technical guidance to enhance the usability and maintainability of their applications.</p>
+<p lang="fr">Conçu et mis en œuvre des améliorations et des nouvelles fonctionnalités pour plusieurs applications d'entreprise de grande envergure. Garanti la stabilité et l'efficacité d'un domaine englobant quatre applications d'entreprise majeures. Fourni aux clients des conseils fonctionnels et techniques pour améliorer l'utilisabilité et la maintenabilité de leurs applications.</p>
 
 <p lang="en">​<strong>Technical Environment</strong> Java, JavaEE, ZK, Spring, Hibernate, Maven, Jenkins, Git, Gerrit, JavaScript, Less, Linux, Perl, Apache Tomcat, Apache HTTP.</p>
 <p lang="fr">​<strong>Environnement technique</strong> Java, JavaEE, ZK, Spring, Hibernate, Maven, Jenkins, Git, Gerrit, JavaScript, Less, Linux, Perl, Apache Tomcat, Apache HTTP.</p>
