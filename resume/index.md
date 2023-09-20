@@ -3,8 +3,8 @@ layout: cv
 title: Taha BASRI
 ---
 # Taha BASRI
-<p lang="en">Software Engineer.</p>
-<p lang="fr">Ingénieur logiciel.</p>
+<p lang="en">Software Engineer</p>
+<p lang="fr">Ingénieur logiciel</p>
 
 <div id="webaddress">
     <a href="mailto:tahabsri@gmail.com">tahabsri@gmail.com</a>
@@ -20,8 +20,9 @@ title: Taha BASRI
 --- | --- | ---
 Java / Java EE / Android                 |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
 Spring Boot / Micronaut / Helidon        |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / SubstrateVM
-Salesforce CRM                           | Salesforce B2B Commerce       |Apex / LWC
+Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / Native Image
+Salesforce CRM                           |Salesforce Commerce Cloud       |Apex / LWC
+Lightning Web Runtime                           |Loyalty, Rebate & Automotive       | Experience Cloud
 
 <br />
 
@@ -35,11 +36,11 @@ Salesforce CRM                           | Salesforce B2B Commerce       |Apex /
 <p lang="en"><strong>Salesforce</strong>, Casablanca - Morocco <em>(November 2021 to present)</em></p>
 <p lang="fr"><strong>Salesforce</strong>, Casablanca - Maroc <em>(Novembre 2021 au présent)</em></p>
 
-<p lang="en">Design and deliver SaaS solutions using Salesforce Sales Cloud and Salesforce Commerce technologies. Create guided and customized solutions for industry-specific needs and solve complex problems. Improve technical quality thanks to a strong experience in the development and maintenance of Salesforce B2B Commerce technologies.</p>
-<p lang="fr">Concevoir et fournir des solutions SaaS à l'aide des technologies Salesforce Sales Cloud et Salesforce Commerce. Créer des solutions guidées et personnalisées pour les besoins spécifiques à l'industrie et résoudre les problèmes complexes. Améliorer la qualité technique grâce à une forte expérience dans le développement et la maintenance des technologies Salesforce B2B Commerce.</p>
+<p lang="en">Design and deliver SaaS solutions using Salesforce Sales Cloud and Salesforce Commerce technologies. Create guided and customized solutions for industry-specific needs and solve complex problems. Improve technical quality thanks to a strong experience in the development and maintenance of Salesforce Commerce Cloud technologies.</p>
+<p lang="fr">Concevoir et fournir des solutions SaaS à l'aide des technologies Salesforce Sales Cloud et Salesforce Commerce. Créer des solutions guidées et personnalisées pour les besoins spécifiques à l'industrie et résoudre les problèmes complexes. Améliorer la qualité technique grâce à une forte expérience dans le développement et la maintenance des technologies Salesforce Commerce Cloud.</p>
 
-<p lang="en">​<strong>Technical Environment</strong> Salesforce B2B Commerce, Lightning Experience, Lightning Web Components, Apex, JavaScript, Git, Atlassian Products.</p>
-<p lang="fr">​<strong>Environnement technique</strong> Salesforce B2B Commerce, Lightning Experience, Lightning Web Components, Apex, JavaScript, Git, produits Atlassian.</p>
+<p lang="en">​<strong>Technical Environment</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
+<p lang="fr">​<strong>Environnement technique</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
 <!-- EXP #03 Salesforce / END -->
 
 <!-- EXP #02 Oracle / START -->
@@ -85,16 +86,16 @@ Offrir des directives fonctionnelles et techniques aux clients en termes d'utili
 
 <!-- PROJECT #02 SNIPPETS / START -->
 <p lang="en"><strong>Snippets for VSCode</strong> (VSCode extension)</p>
-<p lang="fr"><strong>Snippets for VSCode</strong> (Extension VSCode)</p>
+<p lang="fr"><strong>Snippets pour VSCode</strong> (Extension VSCode)</p>
 
-<p lang="en">VSCode extension for managing code snippets.</p>
-<p lang="fr">Extension VSCode pour gérer les bouts de code.</p>
+<p lang="en">Best VSCode extension for managing code snippets (23k installs).</p>
+<p lang="fr">Meilleur extension VSCode pour gérer les bouts de code (23k installations).</p>
 
 <p lang="en">Link: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
 <p lang="fr">Lien: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
 <!-- PROJECT #02 SNIPPETS / END -->
 
-<!-- PROJECT #01 TAKE-A-HINT / START -->
+<!-- PROJECT #01 TAKE-A-HINT / START
 <p lang="en"><strong>take-a-hint</strong> (Java CLI framework)</p>
 <p lang="fr"><strong>take-a-hint</strong> (Framework Java pour ligne de commande)</p>
 
@@ -163,9 +164,10 @@ Offrir des directives fonctionnelles et techniques aux clients en termes d'utili
 <h2 lang="en">Certification</h2>
 <h2 lang="fr">Certification</h2>
 
+
+<p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
 <p><strong>Salesforce Certified Experience Cloud Consultant</strong></p>
 <p><strong>Salesforce Certified JavaScript Developer I</strong></p>
-<p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
 <p><strong>Salesforce Certified Platform Developer I</strong></p>
 <p><strong>Salesforce Platform App Builder</strong></p>
 <p><strong>Salesforce Administrator</strong></p>
