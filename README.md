@@ -5,6 +5,7 @@ This branch is the result of the output : https://tahabasri.com
 Quickly getting started :
 ```
 bundle install
+gem install jekyll
 jekyll build
 jekyll serve
 ```

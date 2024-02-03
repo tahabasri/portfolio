@@ -18,11 +18,11 @@ title: Taha BASRI
 <h3 lang="fr">Confortable avec</h3>
 
 --- | --- | ---
-Java / Java EE / Android                 |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
-Spring Boot / Micronaut / Helidon        |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / Native Image
 Salesforce CRM                           |Salesforce Commerce Cloud       |Apex / LWC
-Lightning Web Runtime                           |Loyalty / Rebate / Automotive       | Experience Cloud
+Lightning Web Runtime                   |Loyalty / Rebate / Automotive       | Experience Cloud
+Java / Java EE / Android                 |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
+Spring Boot / Micronaut        |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
+Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / Native Image
 
 <br />
 
@@ -157,7 +157,9 @@ Lightning Web Runtime                           |Loyalty / Rebate / Automotive  
 <h2 lang="fr">Certification</h2>
 
 
+<p><strong>B2B Commerce For Developers Accredited Professional</strong></p>
 <p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
+<p><strong>Salesforce Certified AI Associate</strong></p>
 <p><strong>Salesforce Certified Experience Cloud Consultant</strong></p>
 <p><strong>Salesforce Certified JavaScript Developer I</strong></p>
 <p><strong>Salesforce Certified Platform Developer I</strong></p>

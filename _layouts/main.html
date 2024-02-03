@@ -8,7 +8,7 @@
     <title>{{ page.title }}</title>
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   </head>
@@ -32,15 +32,16 @@
     <table id="top_part">
         <tr>
             <td id="about" class="animated slideInLeft" style="animation-delay:0.5s;">
+                <img class="mobile-img" src="../img/master-pic.png" width="50%" />
                 <h1 id="welcomeTitle">TAHA HERE !</h1>
                 <h2>I'm a Software Engineer, Entrepreneur, Junior Instructor & Cooking Guru!</h2>
                 <a class="btn_one" href="#bio-anchor">What do I do ?</a><br>
                 <table>
-                    <tr style="columns: 3;">
+                    <tr class="social-table">
                         <td class="animated zoomIn" style="animation-delay:0.2s;"><a class="social"
                           target="_blank" href="https://www.facebook.com/TheTahaBasri/"><i class="fab fa-facebook"></i></a></td>
                         <td class="animated zoomIn" style="animation-delay:0.4s;"><a class="social"
-                          target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-twitter"></i></a></td>
+                          target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-x-twitter"></i></a></td>
                         <td class="animated zoomIn" style="animation-delay:0.6s;"><a class="social"
                           target="_blank" href="https://www.instagram.com/thetahabasri"><i class="fab fa-instagram"></i></a></td>
                         <td class="animated zoomIn" style="animation-delay:0.8s;"><a class="social"
@@ -53,7 +54,7 @@
                 </table>
             </td>
             <td id="rightImageContainer" class="animated" style="animation-delay:0.2s;">
-                <div id="rightImage"></div>
+                <img src="../img/master-pic.png" width="60%" />
             </td>
         </tr>
     </table>
@@ -63,21 +64,21 @@
         <h2>I may help you with :</h2>
         <div id="sections">
             <div>
-                <a class="icon"><i class="fas fa-file-code fa-5x"></i></a>
+                <a class="icon"><i class="fas fa-file-code fa-3x"></i></a>
                 <h3>Software Development</h3>
-                <p>4+ years of professional experience at <img src="../img/comp_CGI_logo.png" width="35px" /> , <img
-                        src="../img/comp_ORACLE_logo.png" width="100px" /> and <img src="../img/comp_SALESFORCE_logo.png"
-                        style="position: relative; top: 5px;" width="100px" />.</p>
+                <p>5+ years of combined professional experience at <img src="../img/comp_SALESFORCE_logo.png"
+                    style="position: relative; top: 5px;" width="100px" />, <img
+                        src="../img/comp_ORACLE_logo.png" width="100px" /> and <img src="../img/comp_CGI_logo.png" width="35px" /></p>
             </div>
             <div>
-                <a class="icon"><i class="fas fa-shopping-cart fa-5x"></i></a>
-                <h3>e-commerce</h3>
-                <p>From finding the best product for your target market to successful scaling 🚀</p>
+                <a class="icon"><i class="fas fa-business-time fa-3x"></i></a>
+                <h3>Business</h3>
+                <p>From building your MVP to successful scaling 🚀</p>
             </div>
             <div>
-                <a class="icon"><i class="fas fa-paint-brush fa-5x"></i></a>
+                <a class="icon"><i class="fas fa-paint-brush fa-3x"></i></a>
                 <h3>Design</h3>
-                <p>I opened my first Photoshop project in 2009, can't say more 😅</p>
+                <p>I created my first Photoshop project in 2009, just imagine 😅</p>
             </div>
         </div>
         <h2>Want a resume ?</h2> Check my <a class="btn_social" target="_blank" href="resume">resume</a> or its <a class="btn_social" target="_blank" href="resume?lang=fr">french version</a>.
@@ -85,43 +86,51 @@
     <div class="anchor" id="work-anchor"></div>
     <div id="work">
         <h1>work</h1>
-        <h2>During my time using a 🖱️ and a ⌨️, I managed to :</h2>
+        <h2>During my time using a 🖱️ and a ⌨️, I managed to : </h2>
+        <p>(swipe left and right)</p>
         <div id="album-rotator-container">
             <div id="album-rotator">
                 <div id="album-rotator-holder">
+                    <a target="_blank" class="album-item" href="https://youtu.be/JHejvTDp9Lg">
+                        <span class="album-details">
+                            <span class="album-item-icon"><i class="fas fa-code"></i> present</span>
+                            <span class="subtitle">Building LWR sites with Experience Cloud</span>
+                            <span class="subtext">on NAD 2023 event</span>
+                        </span>
+                    </a>
                     <a target="_blank" class="album-item" href="https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets">
                         <span class="album-details">
-                            <span class="album-item-icon"><i class="fas fa-code"></i> Code</span>
+                            <span class="album-item-icon"><i class="fas fa-code"></i> code</span>
                             <span class="title">Snippets</span>
                             <span class="subtitle">VSCode Extension</span>
-                            <span class="subtext">On VSCode</span>
+                            <span class="subtext">on VSCode</span>
                         </span>
                     </a>
                     <a target="_blank" class="album-item" href="https://medium.com/swlh/manage-process-as-code-faa03e4c24c1">
                         <span class="album-details">
-                            <span class="album-item-icon"><i class="fas fa-pen"></i> Write</span>
+                            <span class="album-item-icon"><i class="fas fa-pen"></i> write</span>
                             <span class="subtitle">Manage Process as Code</span>
-                            <span class="subtext">On Medium</span>
+                            <span class="subtext">on Medium</span>
                         </span>
                     </a>
                     <a target="_blank" class="album-item" href="https://github.com/tahabasri/take-a-hint">
                         <span class="album-details">
-                            <span class="album-item-icon"><i class="fas fa-code"></i> Code</span>
+                            <span class="album-item-icon"><i class="fas fa-code"></i> code</span>
                             <span class="subtitle">a tiny CLI Java framework</span>
-                            <span class="subtext">On Github</span>
+                            <span class="subtext">on Github</span>
                         </span>
                     </a>
                     <a target="_blank" class="album-item" href="https://medium.com/swlh/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362">
                         <span class="album-details">
-                            <span class="album-item-icon"><i class="fas fa-pen"></i> Write</span>
+                            <span class="album-item-icon"><i class="fas fa-pen"></i> write</span>
                             <span class="subtitle subtitle-small-text">How to code your email signature</span>
-                            <span class="subtext">On Medium</span>
+                            <span class="subtext">on Medium</span>
                         </span>
                     </a>
                     <a class="album-item" href="https://twitter.com/smpnjn">
                         <span class="album-details">
-                            <span class="title">And</span>
-                            <span class="subtitle">Finally..</span>
+                            <span class="title">and</span>
+                            <span class="subtitle">finally..</span>
                             <span class="subtext">we're not yet done 💪</span>
                         </span>
                     </a>
@@ -142,15 +151,15 @@
                     <div id="inner_div">
                         <table id="inner_table">
                             <tr>
-                                <td>If you want to send a personal message you can find Taha on 
-                                    <a class="btn_social" href="https://www.instagram.com/thetahabasri" target="_blank"> Instagram</a>
-                                    & 
-                                    <a class="btn_social" href="https://twitter.com/thetahabasri" target="_blank"> Twitter</a>.
+                                <td>Feeling social? Slide into my DMs on
+                                    <a class="btn_social" href="https://x.com/thetahabasri" target="_blank"> X</a>
+                                    and/or 
+                                    <a class="btn_social" href="https://www.instagram.com/thetahabasri" target="_blank"> Instagram</a>.
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    For collaborations, business inquiries, and interviews send an email to:
+                                    Or hit me up with an old-school email at
                                 </td>
                             </tr>
                             <tr>
@@ -167,13 +176,13 @@
     <div id="footer">
         <div id="footer-social">
             <a class="social" target="_blank" href="https://www.facebook.com/TheTahaBasri/"><i class="fab fa-facebook"></i></a>
-            <a class="social" target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-twitter"></i></a>
+            <a class="social" target="_blank" href="https://twitter.com/thetahabasri"><i class="fab fa-x-twitter"></i></a>
             <a class="social" target="_blank" href="https://www.instagram.com/thetahabasri"><i class="fab fa-instagram"></i></a>
             <a class="social" target="_blank" href="https://www.linkedin.com/in/tahabasri/"><i class="fab fa-linkedin"></i></a>
             <a class="social" target="_blank" href="https://tahabasri.medium.com/"><i class="fab fa-medium"></i></a>
             <a class="social" target="_blank" href="https://github.com/tahabasri"><i class="fab fa-github"></i></a>
         </div>
-        <p>Feel free to use this <a href="https://github.com/tahabasri/portfolio">website template</a> as you like 👍.</p>
+        <p>Feel free to use this <a href="https://github.com/tahabasri/portfolio">website template</a> as you like 👍</p>
     </div>
     <script src="scripts/index.js" type="module"></script>
     <script id="noise" type="x-shader/x-fragment">
