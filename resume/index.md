@@ -159,10 +159,11 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 
 <p><strong>B2B Commerce For Developers Accredited Professional</strong></p>
 <p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
-<p><strong>Salesforce Certified AI Associate</strong></p>
 <p><strong>Salesforce Certified Experience Cloud Consultant</strong></p>
 <p><strong>Salesforce Certified JavaScript Developer I</strong></p>
 <p><strong>Salesforce Certified Platform Developer I</strong></p>
 <p><strong>Salesforce Platform App Builder</strong></p>
+<p><strong>Salesforce Certified AI Associate</strong></p>
+<p><strong>Salesforce Certified Associate</strong></p>
 <p><strong>Salesforce Administrator</strong></p>
 <p><strong>Oracle Certified Associate, Java SE 8 Programmer</strong></p>
