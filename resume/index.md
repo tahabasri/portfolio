@@ -36,8 +36,8 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <p lang="en"><strong>Salesforce</strong>, Casablanca - Morocco <em>(November 2021 to present)</em></p>
 <p lang="fr"><strong>Salesforce</strong>, Casablanca - Maroc <em>(Novembre 2021 au présent)</em></p>
 
-<p lang="en">Designed and delivered SaaS solutions using Salesforce Sales Cloud and Salesforce Commerce technologies. Crafted guided and customized solutions for industry-specific needs and solved complex problems. Elevated technical standards through extensive experience in developing and maintaining Salesforce Commerce Cloud technologies.</p>
-<p lang="fr">Conçu et déployé des solutions SaaS en exploitant les technologies Salesforce Sales Cloud et Salesforce Commerce. Créé des solutions personnalisées et orientées vers des besoins spécifiques à l'industrie, et résolu des problèmes complexes. Amélioré la qualité technique grâce à une solide expérience dans le développement et la maintenance des technologies Salesforce Commerce Cloud.</p>
+<p lang="en">Designs and delivers SaaS solutions using Salesforce and Salesforce Commerce technologies. Crafts guided and customized solutions for industry-specific needs. Elevates technical standards through extensive experience in developing and maintaining Salesforce technologies.</p>
+<p lang="fr">Conçois et déploie des solutions SaaS en exploitant les technologies Salesforce et Salesforce Commerce. Crée des solutions personnalisées et orientées vers des besoins spécifiques à l'industrie. Améliore la qualité technique grâce à une solide expérience dans le développement et la maintenance des technologies Salesforce Commerce Cloud.</p>
 
 <p lang="en">​<strong>Technical Environment</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
 <p lang="fr">​<strong>Environnement technique</strong> Salesforce Commerce Cloud, Lightning Experience, LWC, LWR, Apex, JavaScript.</p>
