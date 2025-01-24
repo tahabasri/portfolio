@@ -157,6 +157,7 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <h2 lang="fr">Certification</h2>
 
 
+<p><strong>Salesforce Certified Sharing and Visibility Architect</strong></p>
 <p><strong>B2B Commerce For Developers Accredited Professional</strong></p>
 <p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
 <p><strong>Salesforce Certified Experience Cloud Consultant</strong></p>
