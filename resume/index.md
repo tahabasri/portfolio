@@ -80,8 +80,8 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <p lang="en"><strong>Snippets for VSCode</strong> (VSCode extension)</p>
 <p lang="fr"><strong>Snippets pour VSCode</strong> (Extension VSCode)</p>
 
-<p lang="en">Best VSCode extension for managing code snippets (23k installs).</p>
-<p lang="fr">Meilleur extension VSCode pour gérer les bouts de code (23k installations).</p>
+<p lang="en">Best VSCode extension for managing code snippets (40k installs).</p>
+<p lang="fr">Meilleur extension VSCode pour gérer les bouts de code (40k installations).</p>
 
 <p lang="en">Link: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
 <p lang="fr">Lien: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
