@@ -166,6 +166,7 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <p><strong>Salesforce Certified JavaScript Developer I</strong></p>
 <p><strong>Salesforce Certified Platform Developer I</strong></p>
 <p><strong>Salesforce Platform App Builder</strong></p>
+<p><strong>Salesforce Certified AI Specialist</strong></p>
 <p><strong>Salesforce Certified AI Associate</strong></p>
 <p><strong>Salesforce Certified Associate</strong></p>
 <p><strong>Salesforce Administrator</strong></p>
