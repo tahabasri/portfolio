@@ -156,20 +156,13 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <h2 lang="en">Certification</h2>
 <h2 lang="fr">Certification</h2>
 
-
-<p><strong>Salesforce Order Management Developer Accredited Professional</strong></p>
-<p><strong>Salesforce Order Management Administrator Accredited Professional</strong></p>
-<p><strong>Salesforce Certified Sharing and Visibility Architect</strong></p>
-<p><strong>B2B Commerce For Developers Accredited Professional</strong></p>
-<p><strong>B2B Commerce For Administrators Accredited Professional</strong></p>
-<p><strong>Salesforce Certified Advanced Administrator</strong></p>
-<p><strong>Salesforce Certified Data Cloud Consultant</strong></p>
-<p><strong>Salesforce Certified Experience Cloud Consultant</strong></p>
-<p><strong>Salesforce Certified JavaScript Developer I</strong></p>
-<p><strong>Salesforce Certified Platform Developer I</strong></p>
-<p><strong>Salesforce Platform App Builder</strong></p>
-<p><strong>Salesforce Certified AI Specialist</strong></p>
-<p><strong>Salesforce Certified AI Associate</strong></p>
-<p><strong>Salesforce Certified Associate</strong></p>
-<p><strong>Salesforce Administrator</strong></p>
-<p><strong>Oracle Certified Associate, Java SE 8 Programmer</strong></p>
+--- | ---
+<strong>Salesforce Certified Sharing and Visibility Architect</strong>    |<strong>Salesforce Certified Platform Administrator II</strong>
+<strong>Salesforce Certified Data Cloud Consultant</strong>    |<strong>Salesforce Certified Agentforce Specialist</strong>
+<strong>Salesforce Order Management Developer Accredited Professional</strong>    |<strong>Salesforce Order Management Administrator Accredited Professional</strong>
+<strong>B2B Commerce For Developers Accredited Professional</strong>    |<strong>B2B Commerce For Administrators Accredited Professional</strong>
+<strong>Salesforce Certified Experience Cloud Consultant</strong>    |<strong>Salesforce Certified Advanced Administrator</strong>
+<strong>Salesforce Certified Platform Developer I</strong>    |<strong>Salesforce Certified JavaScript Developer I</strong>
+<strong>Salesforce Certified AI Associate</strong>    |<strong>Salesforce Certified Associate</strong>
+<strong>Salesforce Platform App Builder</strong>    |<strong>Salesforce Administrator</strong>
+<strong>Oracle Certified Associate, Java SE 8 Programmer</strong>    |
