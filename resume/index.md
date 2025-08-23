@@ -3,26 +3,14 @@ layout: cv
 title: Taha BASRI
 ---
 # Taha BASRI
-<p lang="en">Software Engineer</p>
-<p lang="fr">Ingénieur logiciel</p>
+<h2 lang="en">Software Engineer</h2>
+<h2 lang="fr">Ingénieur logiciel</h2>
 
 <div id="webaddress">
     <a href="mailto:tahabsri@gmail.com">tahabsri@gmail.com</a>
 |   <a href="https://linkedin.com/in/tahabasri/en">linkedin.com/in/tahabasri</a>
 |   <a href="https://github.com/tahabasri">github.com/tahabasri</a>
 </div>
-
-<br />
-
-<h3 lang="en">Comfortable with</h3>
-<h3 lang="fr">Confortable avec</h3>
-
---- | --- | ---
-Salesforce CRM                           |Salesforce Commerce Cloud       |Apex / LWC
-Lightning Web Runtime                   |Loyalty / Rebate / Automotive       | Experience Cloud
-Java / Java EE / Android                 |Spring MVC / JSF / ZK          |Git / Maven / Jenkins / Sonar
-Spring Boot / Micronaut        |JPA / Hibernate / Spring Data  |JUnit / Mockito / Selenium
-Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalVM / Native Image
 
 <br />
 
@@ -36,11 +24,29 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <p lang="en"><strong>Salesforce</strong>, Casablanca - Morocco <em>(November 2021 to present)</em></p>
 <p lang="fr"><strong>Salesforce</strong>, Casablanca - Maroc <em>(Novembre 2021 au présent)</em></p>
 
-<p lang="en">Leads the design, implementation, and optimization of Salesforce solutions, specializing in Commerce Cloud (B2B and OMS). Collaborates with clients to understand business needs and translates them into scalable Salesforce solutions. Oversees end-to-end Salesforce implementation projects, from requirements gathering and solution design to development, testing, and deployment. Provides ongoing support, troubleshooting, and performance optimization for Salesforce Commerce Cloud implementations. Develops and delivers training sessions and documentation to empower clients in utilizing Salesforce solutions effectively. Stays ahead of industry trends and best practices, proactively sharing insights with internal teams and clients to drive innovation and efficiency.</p>
-<p lang="fr">Dirige la conception, l’implémentation et l’optimisation des solutions Salesforce, en se spécialisant dans Commerce Cloud (B2B et OMS). Collabore avec les clients pour comprendre leurs besoins métier et les traduire en solutions Salesforce évolutives. Supervise les projets d’implémentation Salesforce de bout en bout, de la collecte des exigences et la conception de la solution au développement, aux tests et au déploiement. Assure un support continu, le dépannage et l’optimisation des performances des implémentations de Salesforce Commerce Cloud. Conçoit et dispense des formations ainsi que de la documentation pour permettre aux clients d’utiliser efficacement les solutions Salesforce. Anticipe les tendances du secteur et les meilleures pratiques, en partageant proactivement des insights avec les équipes internes et les clients afin de favoriser l’innovation et l’efficacité.</p>
+<p lang="en">Technical Lead on Salesforce programs spanning Core Clouds (Sales, Service), Experience Cloud, Commerce (B2B/D2C/OMS) and auxiliary Clouds. Partnered with solution/enterprise architects to translate business outcomes into scalable designs; refined requirements, shaped data and integration contracts, and aligned security and sharing models. Led squads through implementation, guided LWC/Apex/Flow patterns, reviewed designs and code, and coached developers. Helped define CI/CD and quality gates with Salesforce DX and packaging, and contributed to performance, observability, and release readiness.</p>
+<p lang="fr">Tech Lead sur des programmes Salesforce couvrant les Clouds principaux (Sales, Service), Experience Cloud, Commerce (B2B/D2C/OMS) et autres Clouds auxiliaires. En collaboration avec les architectes solution/entreprise, traduction des objectifs métier en conceptions évolutives ; affinage des exigences, cadrage des modèles de données et des contrats d’intégration, et alignement des modèles de sécurité et de partage. Pilotage d’équipes pendant l’implémentation : définition de patterns LWC/Apex/Flow, revues de conception et de code, et coaching des développeurs. Contribution à la définition du CI/CD et des garde‑fous qualité avec Salesforce DX et packaging, et participation aux actions sur la performance, l’observabilité et la préparation des releases.</p>
 
-<p lang="en">​<strong>Technical Environment</strong> Salesforce Commerce Cloud, B2B/D2C/OMS, Experience Cloud, Lightning Web Runtime (LWR), LWC, Apex, CI/CD & Automation.</p>
-<p lang="fr">​<strong>Environnement technique</strong> Salesforce Commerce Cloud, B2B/D2C/OMS, Experience Cloud, Lightning Web Runtime (LWR), LWC, Apex, CI/CD & Automation.</p>
+<ol lang="en">
+    <li>Worked across Sales, Service, Experience, Commerce (B2B/D2C/OMS) and auxiliary Clouds; integrations with ERP, payments and data.</li>
+    <li>Contributed to solution design: data models, sharing/visibility, identity/SSO and non‑functional requirements.</li>
+    <li>Implemented API‑first and event‑driven patterns where needed (REST, Async/Bulk, Platform Events, External Services).</li>
+    <li>Set up branching strategy and CI/CD with Salesforce DX and unlocked packages; added tests and static analysis gates.</li>
+    <li>Drove LWR/LWC/Apex best practices and regular performance/security checkpoints.</li>
+    <li>Facilitated estimation, risk/issue tracking, stakeholder communication; produced diagrams and integration specs.</li>
+</ol>
+
+<ol lang="fr">
+    <li>Intervention sur Sales, Service, Experience, Commerce (B2B/D2C/OMS) et autres Clouds auxiliaires ; intégrations avec ERP, solutions de paiement et données.</li>
+    <li>Contribution à la conception de solutions : modèles de données, partage/visibilité, identité/SSO et exigences non fonctionnelles.</li>
+    <li>Mise en œuvre de patterns API‑first et orientés événements lorsque pertinent (REST, Async/Bulk, Platform Events, External Services).</li>
+    <li>Mise en place de la stratégie de branches et du CI/CD avec Salesforce DX et packages déverrouillés ; ajout de tests et de contrôles d’analyse statique.</li>
+    <li>Promotion des bonnes pratiques LWR/LWC/Apex et points de contrôle réguliers en matière de performance et sécurité.</li>
+    <li>Animation des estimations, suivi risques/incidents, communication aux parties prenantes ; production de diagrammes et spécifications d’intégration.</li>
+</ol>
+
+<p lang="en">​<strong>Technical Environment</strong> Sales Cloud, Service Cloud, Experience Cloud (Aura/LWR), Commerce Cloud (B2B, D2C, OMS), Loyalty Cloud, Rebate Management, Revenue Cloud, Agentforce, LWC, Apex, Flows, Salesforce DX.</p>
+<p lang="fr">​<strong>Environnement technique</strong> Sales Cloud, Service Cloud, Experience Cloud (Aura/LWR), Commerce Cloud (B2B, D2C, OMS), Loyalty Cloud, Rebate Management, Revenue Cloud, Agentforce, LWC, Apex, Flows, Salesforce DX.</p>
 <!-- EXP #03 Salesforce / END -->
 
 <!-- EXP #02 Oracle / START -->
@@ -80,49 +86,42 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 <p lang="en"><strong>Snippets for VSCode</strong> (VSCode extension)</p>
 <p lang="fr"><strong>Snippets pour VSCode</strong> (Extension VSCode)</p>
 
-<p lang="en">Best VSCode extension for managing code snippets (40k installs).</p>
-<p lang="fr">Meilleur extension VSCode pour gérer les bouts de code (40k installations).</p>
+<p lang="en">Best VSCode extension for managing code snippets (90k downloads).</p>
+<p lang="fr">Meilleur extension VSCode pour gérer les bouts de code (90k téléchargements).</p>
 
-<p lang="en">Link: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
-<p lang="fr">Lien: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></p>
+<ul lang="en"><li>Link: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></li></ul>
+<ul lang="fr"><li>Lien: <a href="https://github.com/tahabasri/snippets">https://github.com/tahabasri/snippets</a></li></ul>
 <!-- PROJECT #02 SNIPPETS / END -->
 
-<!-- PROJECT #01 TAKE-A-HINT / START
-<p lang="en"><strong>take-a-hint</strong> (Java CLI framework)</p>
-<p lang="fr"><strong>take-a-hint</strong> (Framework Java pour ligne de commande)</p>
+<!-- PROJECT #01 AGENTFORCE / START -->
+<p lang="en"><strong>Agentforce Open Assets Library</strong> (Website)</p>
+<p lang="fr"><strong>Agentforce Open Assets Library</strong> (Site web)</p>
 
-<p lang="en">take-a-hint (a.k.a. Hint) is a Java framework to change the look-and-feel of Java error messages. It allows developers to offer final users direct hints without obliging them to seek documentation when facing errors.</p>
-<p lang="fr">take-a-hint (Hint) est un framework Java pour changer l'apparence des messages d'erreur Java. Il permet aux développeurs d'offrir des conseils directs aux utilisateurs finaux sans les obliger à rechercher de la documentation lorsqu'ils sont confrontés à des erreurs.</p>
+<p lang="en">Community‑driven, open‑source library of composable assets for Agentforce—Actions and Topics organized by product and industry—to help build AI agents faster.</p>
+<p lang="fr">Bibliothèque open source et communautaire d’actifs composables pour Agentforce — Actions et Topics organisés par produit et par industrie — pour accélérer la création d’agents IA.</p>
 
-<p lang="en">Link: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a></p>
-<p lang="fr">Lien: <a href="https://github.com/tahabasri/take-a-hint">https://github.com/tahabasri/take-a-hint</a></p>
-<!-- PROJECT #01 TAKE-A-HINT / END -->
+<ul lang="en"><li>Website: <a href="https://agentforce.sfdefacto.com/">https://agentforce.sfdefacto.com/</a></li></ul>
+<ul lang="fr"><li>Site : <a href="https://agentforce.sfdefacto.com/">https://agentforce.sfdefacto.com/</a></li></ul>
+<!-- PROJECT #01 AGENTFORCE / END -->
 
 <br />
 
 <h2 lang="en">Education</h2>
 <h2 lang="fr">Éducation</h2>
 
-<!-- EDUCATION #03 MASTER / START -->
+<!-- EDUCATION #02 MASTER / START -->
 <p lang="en"><strong>Master (Software Quality)</strong> <em>Highest Honour</em></p>
 <p lang="fr"><strong>Master (Qualité du logiciel)</strong> <em>Mention Très Bien</em></p>
 <ul lang="en"><li>Faculty of Sciences Dhar Mahraz, Fez - Morocco <em>(2016 - 2018)</em></li></ul>
 <ul lang="fr"><li>Faculté des Sciences Dhar Mahraz, Fès - Maroc <em>(2016 - 2018)</em></li></ul>
-<!-- EDUCATION #03 MASTER / END -->
+<!-- EDUCATION #02 MASTER / END -->
 
-<!-- EDUCATION #02 BACHELOR / START -->
+<!-- EDUCATION #01 BACHELOR / START -->
 <p lang="en"><strong>Bachelor's Degree (Development of Information and Communication Systems)</strong> <em>Highest Honour</em></p>
 <p lang="fr"><strong>Licence Professionnelle (Développement des Systèmes d'Information et de Communication)</strong> <em>Mention Très Bien</em></p>
-<ul lang="en"><li>High School of Technology, Meknes - Morocco <em>(2015 - 2016)</em></li></ul>
-<ul lang="fr"><li>École Supérieure de Technologie, Meknès - Maroc <em>(2015 - 2016)</em></li></ul>
-<!-- EDUCATION #02 BACHELOR / END -->
-
-<!-- EDUCATION #01 DUT / START -->
-<p lang="en"><strong>Higher National Diploma (Software Engineering)</strong> <em>Highest Honour</em></p>
-<p lang="fr"><strong>Diplôme Universitaire de Technologie (Génie logiciel)</strong> <em>Mention Très Bien</em></p>
-<ul lang="en"><li>High School of Technology, Meknes - Morocco <em>(2013 - 2015)</em></li></ul>
-<ul lang="fr"><li>École Supérieure de Technologie, Meknès - Maroc <em>(2013 - 2015)</em></li></ul>
-<!-- EDUCATION #01 DUT / END -->
+<ul lang="en"><li>High School of Technology, Meknes - Morocco <em>(2013 - 2016)</em></li></ul>
+<ul lang="fr"><li>École Supérieure de Technologie, Meknès - Maroc <em>(2013 - 2016)</em></li></ul>
+<!-- EDUCATION #01 BACHELOR / END -->
 
 <!-- EDUCATION #00 BAC / START -->
 <p lang="en"><strong>Baccalaureate (Experimental sciences)</strong> <em>Honour</em></p>
@@ -133,28 +132,8 @@ Oracle DB / MySQL                        |TypeScript / JavaScript        |GraalV
 
 <br />
 
-<h2 lang="en">Honors & Awards</h2>
-<h2 lang="fr">Honeurs et Prix</h2>
-
-<!-- AWARD #05 / START -->
-<p lang="en"><strong>Top Talent "Juni’Or" 2018</strong>, <em>CGI Morocco</em>, Fez - Morocco</p>
-<p lang="fr"><strong>Top Talent "Juni'Or" 2018</strong>, <em>CGI Maroc</em>, Fès - Maroc</p>
-<!-- AWARD #05 / END -->
-
-<!-- AWARD #04 / START -->
-<p lang="en"><strong>Prize for best Business Model 2018</strong>, <em>University Sidi Mohamed Ben Abdellah</em>, Fez - Morocco</p>
-<p lang="fr"><strong>Prix du meilleur modèle économique 2018</strong>, <em>Université Sidi Mohamed Ben Abdellah</em>, Fès - Maroc</p>
-<!-- AWARD #04 / END -->
-
-<!-- AWARD #03 / START -->
-<p lang="en"><strong>Academic Excellence Award in Master 2018</strong>, <em>Faculty of Sciences Dhar Mahraz</em>, Fez - Morocco</p>
-<p lang="fr"><strong>Prix d'excellence académique en master 2018</strong>, <em>Faculté des sciences Dhar Mahraz</em>, Fès - Maroc</p>
-<!-- AWARD #03 / END -->
-
-<br />
-
-<h2 lang="en">Certification</h2>
-<h2 lang="fr">Certification</h2>
+<h2 lang="en">Certifications (17x)</h2>
+<h2 lang="fr">Certifications (17x)</h2>
 
 --- | ---
 <strong>Salesforce Certified Sharing and Visibility Architect</strong>    |<strong>Salesforce Certified Platform Administrator II</strong>
