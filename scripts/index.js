@@ -1,310 +1,119 @@
-var width = $(window).width();
-window.onscroll = function () {
-    // if ((width >= 1000)) {
-        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-            $("#header").css("background", "var(--header-bg-color)");
-            $("#header").css("color", "#fff");
-            $("#logo").css("color", "--accent-color");
-            $("#header").css("box-shadow", "0px 0px 20px rgba(0,0,0,0.09)");
-            // $("#header").css("padding", "2vh 4vw");
-            $("#navigation a").hover(function () {
-                $(this).css("border-bottom", "2px solid rgb(255, 44, 90)");
-            }, function () {
-                $(this).css("border-bottom", "2px solid transparent");
-            });
-        } else {
-            $("#header").css("background", "transparent");
-            $("#header").css("color", "var(--header-fg-color)");
-            $("#logo").css("color", "var(--accent-color)");
-            $("#header").css("box-shadow", "0px 0px 0px rgba(0,0,0,0)");
-            // $("#header").css("padding", "2vh 4vw");
-            $("#navigation a").hover(function () {
-                $(this).css("border-bottom", "2px solid #fff");
-            }, function () {
-                $(this).css("border-bottom", "2px solid transparent");
-            });
-        }
-    // }
-}
+/* ============================================================
+   Taha Basri — Portfolio interactions
+   ============================================================ */
+(function () {
+  "use strict";
 
-setTimeout(function () {
-    $("#loading").addClass("animated fadeOut");
-    setTimeout(function () {
-        $("#loading").removeClass("animated fadeOut");
-        $("#loading").css("display", "none");
-    }, 400);
-}, 200);
-
-$(document).ready(function () {
-    $("a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            var hash = this.hash;
-            $('body,html').animate({
-                scrollTop: $(hash).offset().top
-            }, 400, function () {
-                window.location.hash = hash;
-            });
-        }
+  /* ---------- Mobile nav toggle ---------- */
+  const toggle = document.getElementById("navToggle");
+  const links = document.getElementById("navLinks");
+  if (toggle && links) {
+    toggle.addEventListener("click", function () {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
     });
-});
+    links.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
-function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        /*search for elements with a certain atrribute:*/
-        file = elmnt.getAttribute("w3-include-html");
-        if (file) {
-            /* Make an HTTP request using the attribute value as the file name: */
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4) {
-                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("w3-include-html");
-                    includeHTML();
-                }
-            }
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /* Exit the function: */
-            return;
-        }
-    }
-}
+  /* ---------- Nav shadow on scroll ---------- */
+  const nav = document.getElementById("nav");
+  const onScrollNav = function () {
+    if (!nav) return;
+    nav.style.boxShadow =
+      window.scrollY > 40
+        ? "0 12px 34px rgba(20, 60, 120, 0.22)"
+        : "0 10px 30px rgba(20, 60, 120, 0.16)";
+  };
+  window.addEventListener("scroll", onScrollNav, { passive: true });
 
-// Carousel Code - START
-
-import * as THREE from 'https://cdn.skypack.dev/three@v0.122.0';
-
-// Helper functions
-const rgb = function(r, g, b) {
-    return new THREE.Vector3(r, g, b);
-}
-const loader = function(path, texture) {
-    return new Promise((resolve, reject) => {
-        let loader = new THREE.FileLoader();
-        if(typeof texture !== "undefined") {
-            loader = new THREE.TextureLoader();
-        }
-        loader.load(path, (item) => resolve(item));
-    })
-}
-const randomInteger = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-// -- End Helper Functions
-
-const config = {
-    individualItem: '.album-item', // class of individual item
-    carouselWidth: document.documentElement.clientWidth > 1000 ? 1000 : document.documentElement.clientWidth, // in px
-    carouselId: '#album-rotator', // carousel selector
-    carouselHolderId: '#album-rotator-holder', // carousel should be <div id="carouselId"><div id="carouselHolderId">{items}</div></div>
-    colors: [
-        // Define colors for each item. If more items than colors, then first color will be used as default
-        // Format { low: rgb(), high: rgb() for each color }
-        { low: rgb(0, 114, 255), high: rgb(48, 0, 255) },
-        { low: rgb(236, 166, 15), high: rgb(233, 104, 0) },
-        { low: rgb(43, 75, 235), high: rgb(213, 51, 248) },
-        { low: rgb(175, 49, 49), high: rgb(123, 16, 16) }
-    ]
-}
-
-// Async function for generating webGL waves
-const createWave = async function(selector, colors) {      
-    if(document.querySelectorAll(selector) !== null && document.querySelectorAll(selector).length > 0) {
-        // Import all the fragment and vertex shaders
-        const noise = document.getElementById('noise').textContent;
-        const fragment = document.getElementById('fragment').textContent
-        const vertex =document.getElementById('vertex').textContent
-        let i = 0;
-        // For each of the selector elements
-        document.querySelectorAll(selector).forEach(function(item) {
-            // Create a renderer
-            
-            const newCanvas = document.createElement('canvas');
-            newCanvas.id = `canvas-${i}`;
-            item.appendChild(newCanvas);
-            
-            const renderer = new THREE.WebGLRenderer({
-                powerPreference: "high-performance",
-                antialias: true, 
-                alpha: true,
-                canvas: document.getElementById(`canvas-${i}`)
-            });
-
-
-            // Get el width and height
-            const elWidth = parseFloat(window.getComputedStyle(item).width);
-            const elHeight = parseFloat(window.getComputedStyle(item).height);
-
-            // Set sizes and set scene/camera
-            renderer.setSize( elWidth, elHeight );
-            renderer.setPixelRatio( window.devicePixelRatio );
-
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera( 75, elWidth / elHeight, 0.1, 1000 );
-
-            // Check on colors to use
-            let high = colors[0].high; 
-            let low = colors[0].low;
-            if(typeof colors[i] !== "undefined") {
-                high = colors[i].high;
-                low = colors[i].low;
-                ++i;
-            }
-
-            // And use the high color for the subtext.
-            if(item.querySelector('.subtext') !== null) {
-                item.querySelector('.subtext').style.background = `rgba(${high.x},${high.y},${high.z},0.75)`;
-            }
-
-            // Create a plane, and pass that through to our shaders
-            let geometry = new THREE.PlaneGeometry(600, 600, 100, 100);
-            let material = new THREE.ShaderMaterial({
-                uniforms: {
-                    u_lowColor: {type: 'v3', value: low },
-                    u_highColor: {type: 'v3', value: high },
-                    u_time: {type: 'f', value: 0},
-                    u_height: {type: 'f', value: 1},
-                    u_rand: {type: 'f', value: new THREE.Vector2(randomInteger(6, 10), randomInteger(8, 10)) }
-                },
-                fragmentShader: noise + fragment,
-                vertexShader: noise + vertex,
-            });
-
-            // Create the mesh and position appropriately
-            let mesh = new THREE.Mesh(geometry, material);
-            mesh.position.set(0, 0, -300);
-            mesh.material.needsUpdate = true;
-            scene.add(mesh);
-            
-            // On hover effects for each item
-            let enterTimer, exitTimer;
-            item.addEventListener('mouseenter', function(e) {
-                if(typeof exitTimer !== "undefined") {
-                    clearTimeout(exitTimer);
-                }
-                enterTimer = setInterval(function() {
-                    if(mesh.material.uniforms.u_height.value >= 0.5) {
-                        mesh.material.uniforms.u_height.value -= 0.05;
-                    } else {
-                        clearTimeout(enterTimer);
-                    }
-                }, 10);
-            });
-            item.addEventListener('mouseleave', function(e) {
-                if(typeof enterTimer !== "undefined") {
-                    clearTimeout(enterTimer);
-                }
-                exitTimer = setInterval(function() {
-                    if(mesh.material.uniforms.u_height.value < 1) {
-                        mesh.material.uniforms.u_height.value += 0.05;
-                    } else {
-                        clearTimeout(exitTimer);
-                    }
-                }, 10);
-            });
-
-            // Render
-            renderer.render( scene, camera );
-            let t = 0;
-
-            // Animate
-            const animate = function () {
-              requestAnimationFrame( animate );
-                renderer.render( scene, camera );
-                mesh.material.uniforms.u_time.value = t;
-                t = t + 0.02;
-            };
-            animate();
+  /* ---------- Reveal-up via IntersectionObserver ---------- */
+  const revealEls = document.querySelectorAll(".reveal-up");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
         });
-    }
-}
+      },
+      { threshold: 0.2 }
+    );
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("in"); });
+  }
 
-document.addEventListener("DOMContentLoaded", function(e) {
-    createWave(config.individualItem, config.colors);
-
-    // Get items
-    const el = document.querySelector(config.individualItem);
-    const elWidth = parseFloat(window.getComputedStyle(el).width) + parseFloat(window.getComputedStyle(el).marginLeft) + parseFloat(window.getComputedStyle(el).marginRight);
-    
-    // Track carousel
-    let mousedown = false;
-    let movement = false;
-    let initialPosition = 0;
-    let selectedItem;
-    let currentDelta = 0;
-
-    document.querySelectorAll(config.carouselId).forEach(function(item) { 
-        item.style.width = `${config.carouselWidth}px`;
-    });
-    
-    document.querySelectorAll(config.carouselId).forEach(function(item) {
-        item.addEventListener('pointerdown', function(e) {
-            mousedown = true;
-            selectedItem = item;
-            initialPosition = e.pageX;
-            currentDelta = parseFloat(item.querySelector(config.carouselHolderId).style.transform.split('translateX(')[1]) || 0;
-        }); 
-    });
-    
-    const scrollCarousel = function(change, currentDelta, selectedItem) {
-        let numberThatFit = Math.floor(config.carouselWidth / elWidth);
-        let newDelta = currentDelta + change;
-        let elLength = selectedItem.querySelectorAll(config.individualItem).length - numberThatFit;
-        if(newDelta <= 0 && newDelta >= -elWidth * elLength) {
-            selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(${newDelta}px)`;
-        } else {
-            if(newDelta <= -elWidth * elLength) {
-                selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(${-elWidth * elLength}px)`;
-            } else if(newDelta >= 0) {
-                selectedItem.querySelector(config.carouselHolderId).style.transform = `translateX(0px)`;
-            }
-        }
-    }
-
-    document.body.addEventListener('pointermove', function(e) {
-        if(mousedown == true && typeof selectedItem !== "undefined") {
-            let change = -(initialPosition - e.pageX);
-            scrollCarousel(change, currentDelta, document.body);
-            document.querySelectorAll(`${config.carouselId} a`).forEach(function(item) {
-                item.style.pointerEvents = 'none';
-            });
-            movement = true;
-        }
-    });
-    
-    ['pointerup', 'mouseleave'].forEach(function(item) {
-        document.body.addEventListener(item, function(e) {
-            selectedItem = undefined;
-            movement = false;
-            document.querySelectorAll(`${config.carouselId} a`).forEach(function(item) {
-                item.style.pointerEvents = 'all';
-            });
+  /* ---------- Scroll-reveal statement (words light up) ---------- */
+  const statement = document.getElementById("statement");
+  let words = [];
+  if (statement) {
+    // Wrap each word of every text node in a .w span; leave <em> intact.
+    const nodes = Array.from(statement.childNodes);
+    nodes.forEach(function (node) {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const frag = document.createDocumentFragment();
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (/^\s+$/.test(part) || part === "") {
+            frag.appendChild(document.createTextNode(part));
+          } else {
+            const span = document.createElement("span");
+            span.className = "w";
+            span.textContent = part;
+            frag.appendChild(span);
+          }
         });
+        statement.replaceChild(frag, node);
+      }
     });
+    words = Array.from(statement.querySelectorAll(".w"));
+  }
 
-    document.querySelectorAll(config.carouselId).forEach(function(item) {
-        let trigger = 0;
-        item.addEventListener('wheel', function(e) {
-            if(trigger !== 1) {
-                ++trigger;
-            } else {
-                let change = e.deltaX * -3;
-                let currentDelta = parseFloat(item.querySelector(config.carouselHolderId).style.transform.split('translateX(')[1]) || 0;
-                scrollCarousel(change, currentDelta, item);
-                trigger = 0;
-            }
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            return false;
-        });
+  const updateStatement = function () {
+    if (!statement || !words.length) return;
+    const rect = statement.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // progress: 0 when top at 80% of viewport, 1 when bottom passes 45%
+    const start = vh * 0.8;
+    const end = vh * 0.35;
+    const progress = (start - rect.top) / (start - end);
+    const p = Math.max(0, Math.min(1, progress));
+    const count = Math.round(p * words.length);
+    words.forEach(function (w, i) {
+      w.classList.toggle("on", i < count);
     });
-});
+  };
+  window.addEventListener("scroll", updateStatement, { passive: true });
+  window.addEventListener("resize", updateStatement);
+  updateStatement();
 
-// Carousel Code - END
+  /* ---------- CTA word cycling ---------- */
+  const cycle = document.getElementById("cycle");
+  if (cycle) {
+    const verbs = ["build", "ship", "design", "create"];
+    let idx = 0;
+    setInterval(function () {
+      idx = (idx + 1) % verbs.length;
+      cycle.style.opacity = "0";
+      cycle.style.transform = "translateY(8px)";
+      cycle.style.transition = "opacity .25s ease, transform .25s ease";
+      setTimeout(function () {
+        cycle.textContent = verbs[idx];
+        cycle.style.opacity = "1";
+        cycle.style.transform = "none";
+      }, 250);
+    }, 2200);
+  }
+
+  /* ---------- Testimonial marquee: duplicate for seamless loop ---------- */
+  const track = document.querySelector("#marquee .marquee-track");
+  if (track) {
+    track.innerHTML += track.innerHTML;
+  }
+})();
