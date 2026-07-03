@@ -1,0 +1,61 @@
+# ============================================================
+#  Selected Work — edit this file to add / reorder / remove work.
+#  The layout (_layouts/main.html) renders every item below.
+#
+#  Fields:
+#    year    : shown top-right of the card
+#    title   : card heading
+#    tags    : list of small pills
+#    desc    : one/two sentence description
+#    link    : where the button goes
+#    cta     : button label
+#    icon    : Font Awesome class for the button arrow (optional,
+#              defaults to fa-solid fa-arrow-right)
+#    accent  : "blue" (default) or "clay" — card colour theme
+#    images  : ONE OR MORE pictures. They render in the card art
+#              with a subtle hover effect. Drop real screenshots in
+#              img/ and list them here; multiple images stack/fan out.
+# ============================================================
+
+- year: "2024"
+  title: "Snippets — manage your code snippets, right in VS Code"
+  tags: ["VS Code Extension", "Open Source"]
+  desc: "A VS Code extension to bookmark, organise and reuse your snippets without leaving the editor — published on the Marketplace."
+  link: "https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets"
+  cta: "View on Marketplace"
+  accent: "blue"
+  images:
+    - "img/tools_VSCODE_logo.png"
+
+- year: "2023"
+  title: "Building LWR sites with Experience Cloud"
+  tags: ["Speaking", "NAD 2023"]
+  desc: "A live session on building fast, modern LWR sites with Salesforce Experience Cloud — what works, what to watch for, and why."
+  link: "https://youtu.be/JHejvTDp9Lg"
+  cta: "Watch the talk"
+  icon: "fa-solid fa-play"
+  accent: "clay"
+  images:
+    - "img/comp_SALESFORCE_logo.png"
+
+- year: "2021"
+  title: "take-a-hint — a tiny CLI framework for Java"
+  tags: ["Open Source", "Java"]
+  desc: "A small, zero-dependency framework that makes building friendly command-line tools in Java quick and pleasant."
+  link: "https://github.com/tahabasri/take-a-hint"
+  cta: "View on GitHub"
+  icon: "fa-brands fa-github"
+  accent: "blue"
+  images:
+    - "img/tools_VSCODE_logo.png"
+
+- year: "Ongoing"
+  title: "Writing — notes on code, craft & the Salesforce platform"
+  tags: ["Blog", "Medium"]
+  desc: "Long-form articles on process-as-code, developer experience and the small engineering details — published on Medium."
+  link: "https://tahabasri.medium.com/"
+  cta: "Read the blog"
+  icon: "fa-brands fa-medium"
+  accent: "clay"
+  images:
+    - "img/comp_SALESFORCE_logo.png"

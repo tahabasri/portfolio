@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Taha Basri — Developer, Instructor & Tech Enthusiast. Building & teaching on the Salesforce Platform.">
     <meta name="author" content="Taha Basri">
+    <meta name="theme-color" content="#0b0f17">
     <meta property="og:title" content="{{ page.title }}">
     <meta property="og:description" content="Developer, Instructor, Tech Enthusiast & Coffee Aficionado.">
+
+    <!-- Favicons (generated set in favicon_io/) -->
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
     <title>{{ page.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +25,35 @@
   </head>
 
   <body>
+    <!-- ===================== SUBTLE ROTATING BACKGROUND ===================== -->
+    <!-- Very faint Moroccan scenery that slowly cross-fades behind the whole site.
+         Fully dynamic: drop any image into img/bg/ and it joins the rotation —
+         no code changes needed. Timing is derived from the number of images. -->
+    {% assign bgs = site.static_files | where_exp: "f", "f.path contains '/img/bg/'" | sort: "path" %}
+    {% assign n = bgs | size %}
+    {% if n > 0 %}
+    {% assign slot = 16 %}
+    {% assign dur = n | times: slot %}
+    {% assign vis = 100 | divided_by: n %}
+    {% assign hold = vis | minus: 4 %}
+    <style>
+      @keyframes bg-cycle {
+        0%          { opacity: 0;    transform: scale(1.04); }
+        4%          { opacity: 0.08; }
+        {{ hold }}% { opacity: 0.08; }
+        {{ vis }}%  { opacity: 0;    transform: scale(1.10); }
+        100%        { opacity: 0;    transform: scale(1.10); }
+      }
+    </style>
+    <div class="site-bg" aria-hidden="true">
+      {% for f in bgs %}
+      <span style="background-image:url('{{ f.path | relative_url }}'); animation: bg-cycle {{ dur }}s linear infinite; animation-delay: {{ forloop.index0 | times: slot }}s;"></span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
     <!-- ===================== FLOATING PILL NAV ===================== -->
     <header id="nav" class="nav">
-      <a class="nav-brand" href="#top">
-        <span class="nav-avatar"><img src="img/master-pic.png" alt="Taha Basri"></span>
-        <span class="nav-name">TAHA</span>
-      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -39,12 +71,13 @@
         <span class="cloud cloud-2"></span>
         <span class="cloud cloud-3"></span>
       </div>
-      <!-- Hero figure (your photo). Swap freely. -->
+      <!-- Hero figure. default = main photo; alternative glitches in for a few ms. -->
       <div class="hero-figure" aria-hidden="true">
-        <img src="img/master-cutout.png" alt="">
+        <img class="hero-img hero-img-default" src="img/default.png" alt="">
+        <img class="hero-img hero-img-alt" src="img/alternative.png" alt="">
       </div>
       <div class="hero-inner reveal-up">
-        <p class="hero-intro">👋 Hey, I'm Taha</p>
+        <p class="hero-intro"><img class="wave" src="img/icons/wave.png" alt=""> Hey, I'm Taha</p>
         <h1 class="hero-title">
           <span class="hero-title-1">software</span>
           <span class="hero-title-2">developer</span>
@@ -55,22 +88,23 @@
         </p>
       </div>
       <div class="hero-foot">
-        <span class="meta-left"><span class="meta-key">BASED IN</span> <i class="fa-solid fa-location-dot"></i> THE&nbsp;CLOUD ☁️</span>
-        <span class="meta-right">CODE &gt; COFFEE &gt; REPEAT</span>
+        <span class="meta-left">
+          <span class="meta-key">Based in</span>
+          <img class="flag" src="img/icons/uae.png" alt="UAE"> UAE
+          <span class="meta-dot">·</span>
+          <span class="meta-key">from</span>
+          <img class="flag" src="img/icons/morocco.png" alt="Morocco"> Morocco
+        </span>
+        <span class="meta-right">Code &gt; Coffee &amp; Tea &gt; Repeat</span>
       </div>
     </section>
 
     <!-- ===================== WHAT I DO + STATS ===================== -->
     <section class="band what">
-      <div class="band-top">
-        <span class="meta-left"><span class="meta-key">BASED IN</span> <i class="fa-solid fa-location-dot"></i> THE&nbsp;CLOUD ☁️</span>
-        <span class="plus">+</span>
-        <span class="meta-right">CODE &gt; COFFEE &gt; REPEAT</span>
-      </div>
       <hr class="hairline">
 
       <div class="what-grid">
-        <p class="label"><i class="fa-solid fa-diamond label-mark"></i> WHAT I DO</p>
+        <p class="label"><img class="label-icon" src="img/icons/tarbouche.png" alt=""> WHAT I DO</p>
         <h2 class="statement" id="statement">
           I turn ideas into software people actually <em>love</em> — clean code, clear teaching, and the small details that quietly do the work.
         </h2>
@@ -78,7 +112,7 @@
 
       <div class="stats">
         <div class="stat">
-          <p class="stat-num">7+</p>
+          <p class="stat-num"><span class="js-years" data-since="2018">{{ 'now' | date: "%Y" | minus: 2018 }}</span>+</p>
           <hr class="hairline">
           <p class="stat-label">Years building</p>
           <p class="stat-desc">software, teaching &amp; design — across Salesforce, Oracle &amp; CGI</p>
@@ -90,7 +124,7 @@
           <p class="stat-desc">
             <img class="stat-logo" src="img/comp_SALESFORCE_logo.png" alt="Salesforce">
             <img class="stat-logo" src="img/comp_ORACLE_logo.png" alt="Oracle">
-            <img class="stat-logo stat-logo-sm" src="img/comp_CGI_logo.png" alt="CGI">
+            <img class="stat-logo" src="img/comp_CGI_logo.png" alt="CGI">
           </p>
         </div>
       </div>
@@ -99,133 +133,64 @@
     <!-- ===================== SELECTED WORK ===================== -->
     <section class="band work-head" id="work">
       <div class="head-center">
-        <p class="label center"><i class="fa-solid fa-diamond label-mark"></i> SELECTED WORK</p>
+        <p class="label center"><img class="label-icon" src="img/icons/tea.png" alt=""> SELECTED WORK</p>
         <h2 class="big-title">check out some of my work</h2>
         <p class="muted center">A few things I've built, shipped &amp; written — and the thinking behind them.</p>
       </div>
     </section>
 
     <div class="cards" id="cards">
-      <!-- CARD 1 — VSCode extension -->
-      <article class="card" style="--i:0">
+      {% for item in site.data.work %}
+      <article class="card{% if item.accent == 'clay' %} card-clay{% endif %}" style="--i:{{ forloop.index0 }}">
         <div class="card-body">
           <div class="card-head">
-            <span class="card-num">01</span>
-            <span class="card-year">2024</span>
+            <span class="card-num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+            <span class="card-year">{{ item.year }}</span>
           </div>
-          <h3 class="card-title">Snippets — manage your code snippets, right in VS&nbsp;Code</h3>
+          <h3 class="card-title">{{ item.title }}</h3>
           <div class="chips">
-            <span class="chip">VS Code Extension</span>
-            <span class="chip">Open Source</span>
+            {% for tag in item.tags %}<span class="chip">{{ tag }}</span>{% endfor %}
           </div>
-          <p class="card-desc">A VS Code extension to bookmark, organise and reuse your snippets without leaving the editor — published on the Marketplace.</p>
-          <a class="btn-pill" href="https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets" target="_blank" rel="noopener">
-            <span class="btn-arrow"><i class="fa-solid fa-arrow-right"></i></span> View on Marketplace
+          <p class="card-desc">{{ item.desc }}</p>
+          <a class="btn-pill" href="{{ item.link }}" target="_blank" rel="noopener">
+            <span class="btn-arrow"><i class="{{ item.icon | default: 'fa-solid fa-arrow-right' }}"></i></span> {{ item.cta }}
           </a>
         </div>
         <div class="card-art">
-          <!-- Editor mockup -->
-          <div class="mock mock-editor">
-            <div class="mock-bar"><span></span><span></span><span></span></div>
-            <div class="mock-screen">
-              <img src="img/tools_VSCODE_logo.png" alt="VS Code" class="mock-logo">
-              <div class="mock-lines"><i></i><i></i><i></i><i></i></div>
-            </div>
+          <div class="shots shots-{{ item.images | size }}">
+            {% for img in item.images %}
+            <figure class="shot"><img src="{{ img }}" alt="{{ item.title }}" loading="lazy"></figure>
+            {% endfor %}
           </div>
         </div>
       </article>
-
-      <!-- CARD 2 — Talk -->
-      <article class="card card-blue" style="--i:1">
-        <div class="card-body">
-          <div class="card-head">
-            <span class="card-num">02</span>
-            <span class="card-year">2023</span>
-          </div>
-          <h3 class="card-title">Building LWR sites with Experience Cloud</h3>
-          <div class="chips">
-            <span class="chip">Speaking</span>
-            <span class="chip">NAD 2023</span>
-          </div>
-          <p class="card-desc">A live session on building fast, modern LWR sites with Salesforce Experience Cloud — what works, what to watch for, and why.</p>
-          <a class="btn-pill" href="https://youtu.be/JHejvTDp9Lg" target="_blank" rel="noopener">
-            <span class="btn-arrow"><i class="fa-solid fa-play"></i></span> Watch the talk
-          </a>
-        </div>
-        <div class="card-art">
-          <div class="mock mock-video">
-            <div class="mock-play"><i class="fa-solid fa-play"></i></div>
-          </div>
-        </div>
-      </article>
-
-      <!-- CARD 3 — Open source -->
-      <article class="card" style="--i:2">
-        <div class="card-body">
-          <div class="card-head">
-            <span class="card-num">03</span>
-            <span class="card-year">2021</span>
-          </div>
-          <h3 class="card-title">take-a-hint — a tiny CLI framework for Java</h3>
-          <div class="chips">
-            <span class="chip">Open Source</span>
-            <span class="chip">Java</span>
-          </div>
-          <p class="card-desc">A small, zero-dependency framework that makes building friendly command-line tools in Java quick and pleasant.</p>
-          <a class="btn-pill" href="https://github.com/tahabasri/take-a-hint" target="_blank" rel="noopener">
-            <span class="btn-arrow"><i class="fa-brands fa-github"></i></span> View on GitHub
-          </a>
-        </div>
-        <div class="card-art">
-          <div class="mock mock-terminal">
-            <div class="mock-bar mock-bar-dark"><span></span><span></span><span></span></div>
-            <pre class="mock-term"><span class="t-prompt">$</span> take-a-hint --help
-<span class="t-dim">a tiny CLI framework</span>
-<span class="t-ok">✓</span> ready</pre>
-          </div>
-        </div>
-      </article>
+      {% endfor %}
     </div>
 
-    <!-- Writing — secondary work items kept in the same language -->
-    <section class="band writing">
-      <p class="label center"><i class="fa-solid fa-diamond label-mark"></i> WRITING</p>
-      <div class="writing-grid">
-        <a class="write-card" href="https://medium.com/swlh/manage-process-as-code-faa03e4c24c1" target="_blank" rel="noopener">
-          <span class="write-tag"><i class="fa-brands fa-medium"></i> Medium</span>
-          <span class="write-title">Manage Process as Code</span>
-          <span class="write-go">Read <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-        <a class="write-card" href="https://medium.com/swlh/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362" target="_blank" rel="noopener">
-          <span class="write-tag"><i class="fa-brands fa-medium"></i> Medium</span>
-          <span class="write-title">Code your own email signature</span>
-          <span class="write-go">Read <i class="fa-solid fa-arrow-right"></i></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT ===================== -->
+    <!-- ===================== ABOUT — Moroccan roots ===================== -->
     <section class="band about" id="about">
-      <hr class="hairline center-line">
+      <span class="zellige-line" aria-hidden="true"></span>
       <div class="about-grid">
-        <div class="polaroid">
-          <img src="img/second-pic.jpg" alt="Taha Basri">
+        <div class="about-gallery" aria-hidden="false">
+          <figure class="frame frame-a"><img src="img/about/then.JPG" alt="Taha as a child"><figcaption>then.</figcaption></figure>
+          <figure class="frame frame-b"><img src="img/about/roots.jpg" alt="Roots"><figcaption>roots.</figcaption></figure>
+          <figure class="frame frame-c"><img src="img/about/now.JPG" alt="Taha today"><figcaption>now.</figcaption></figure>
         </div>
         <div class="about-text">
-          <p class="label"><i class="fa-solid fa-diamond label-mark"></i> ABOUT ME</p>
-          <h2 class="big-title left">a <em>little</em> about myself</h2>
-          <p>My journey into tech started early — I built my first Photoshop project back in 2009, long before I wrote production code. That mix of design and engineering still shapes how I work today.</p>
-          <p>Over 7+ years across <strong>Salesforce</strong>, <strong>Oracle</strong> and <strong>CGI</strong> I've shipped software, mentored and taught teams, and obsessed over the small details of developer experience. I'm happiest turning messy problems into things that feel simple — usually with a coffee in hand.</p>
-          <p class="signature">Taha.</p>
+          <p class="label"><img class="label-icon" src="img/icons/door.png" alt=""> ABOUT ME</p>
+          <h2 class="big-title left">from <em>Morocco</em>, with code</h2>
+          <p>I'm a Moroccan developer — raised on mint tea, zellige patterns and the kind of hospitality that turns strangers into family. That eye for craft and colour, sharpened long before I wrote production code, is still how I approach engineering: patient, detailed, made to last.</p>
+          <p>My journey into tech started early — I built my first Photoshop project back in 2009. Since then, over <span class="js-years" data-since="2018">{{ 'now' | date: "%Y" | minus: 2018 }}</span>+ years across <strong>Salesforce</strong>, <strong>Oracle</strong> and <strong>CGI</strong>, I've shipped software, mentored teams and obsessed over developer experience — carrying a bit of home into everything I make.</p>
+          <p class="signature">Taha · طه</p>
         </div>
       </div>
     </section>
 
     <!-- ===================== EXPERIENCE ===================== -->
     <section class="band experience" id="experience">
-      <div class="head-center">
-        <h2 class="big-title">the journey so far</h2>
-        <p class="muted center">From enterprise consulting to the world's #1 CRM — building, teaching and shipping along the way.</p>
+      <div class="head-left">
+        <h2 class="big-title left">the journey so far</h2>
+        <p class="muted">From enterprise consulting to the world's #1 CRM — building, teaching and shipping along the way.</p>
       </div>
 
       <div class="timeline" id="timeline">
@@ -236,12 +201,9 @@
             <div class="xp-card">
               <div class="xp-head">
                 <img class="xp-logo" src="img/comp_SALESFORCE_logo.png" alt="Salesforce">
-                <div>
-                  <p class="xp-role">Developer &amp; Instructor</p>
-                  <p class="xp-co">Salesforce</p>
-                </div>
-                <span class="xp-loc"><i class="fa-solid fa-location-dot"></i> Remote</span>
               </div>
+              <p class="xp-role">Developer &amp; Instructor</p>
+              <p class="xp-co">Salesforce</p>
               <ul class="xp-list">
                 <li>Build on the <strong>Salesforce Platform</strong> — LWR sites, Experience Cloud &amp; custom apps.</li>
                 <li>Teach and mentor developers; spoke on LWR at <strong>NAD 2023</strong>.</li>
@@ -255,12 +217,9 @@
             <div class="xp-card">
               <div class="xp-head">
                 <img class="xp-logo" src="img/comp_ORACLE_logo.png" alt="Oracle">
-                <div>
-                  <p class="xp-role">Software Engineer</p>
-                  <p class="xp-co">Oracle</p>
-                </div>
-                <span class="xp-loc"><i class="fa-solid fa-location-dot"></i> —</span>
               </div>
+              <p class="xp-role">Software Engineer</p>
+              <p class="xp-co">Oracle</p>
               <ul class="xp-list">
                 <li>Engineered enterprise software and integrations at scale.</li>
                 <li>Worked across the stack on complex business platforms.</li>
@@ -273,48 +232,15 @@
             <div class="xp-card">
               <div class="xp-head">
                 <img class="xp-logo" src="img/comp_CGI_logo.png" alt="CGI">
-                <div>
-                  <p class="xp-role">Software Developer</p>
-                  <p class="xp-co">CGI</p>
-                </div>
-                <span class="xp-loc"><i class="fa-solid fa-location-dot"></i> —</span>
               </div>
+              <p class="xp-role">Software Developer</p>
+              <p class="xp-co">CGI</p>
               <ul class="xp-list">
                 <li>Delivered consulting projects for enterprise clients.</li>
-                <li>Built the foundations of a 7+ year engineering journey.</li>
+                <li>Built the foundations of an engineering journey.</li>
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== RECOMMENDATIONS ===================== -->
-    <!-- NOTE: placeholder testimonials — replace the quotes & names with real ones. -->
-    <section class="band recos">
-      <div class="head-center">
-        <p class="label center"><i class="fa-solid fa-diamond label-mark"></i> RECOMMENDATIONS</p>
-        <h2 class="big-title">what people say about me</h2>
-        <p class="muted center">A few words from people I've built, shipped &amp; taught alongside.</p>
-      </div>
-
-      <div class="marquee" id="marquee">
-        <div class="marquee-track">
-          <figure class="note">
-            <span class="clip"></span>
-            <blockquote>Taha pairs strong engineering with a real eye for design and a gift for explaining hard things simply. A joy to build with.</blockquote>
-            <figcaption><span class="note-name">A. Colleague</span><span class="note-role">Engineering Lead</span></figcaption>
-          </figure>
-          <figure class="note">
-            <span class="clip"></span>
-            <blockquote>One of those rare developers who cares about the details and the people using the product. Highly recommend.</blockquote>
-            <figcaption><span class="note-name">B. Teammate</span><span class="note-role">Product Manager</span></figcaption>
-          </figure>
-          <figure class="note">
-            <span class="clip"></span>
-            <blockquote>Sharp, generous with knowledge, and ships. His talks and writing have helped a lot of people level up.</blockquote>
-            <figcaption><span class="note-name">C. Mentee</span><span class="note-role">Salesforce Developer</span></figcaption>
-          </figure>
         </div>
       </div>
     </section>
@@ -331,7 +257,7 @@
           incredible work together.
         </h2>
         <div class="cta-media" aria-hidden="true">
-          <div class="cta-frame"><img src="img/master-pic.png" alt=""></div>
+          <div class="cta-frame"><img src="img/collab.jpg" alt=""></div>
         </div>
         <div class="cta-contact">
           <div class="cta-col">

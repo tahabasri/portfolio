@@ -111,9 +111,13 @@
     }, 2200);
   }
 
-  /* ---------- Testimonial marquee: duplicate for seamless loop ---------- */
-  const track = document.querySelector("#marquee .marquee-track");
-  if (track) {
-    track.innerHTML += track.innerHTML;
-  }
+  /* ---------- Dynamic years of experience (counts from data-since) ---------- */
+  const yearEls = document.querySelectorAll(".js-years");
+  yearEls.forEach(function (el) {
+    const since = parseInt(el.getAttribute("data-since"), 10);
+    if (!isNaN(since)) {
+      const years = new Date().getFullYear() - since;
+      if (years > 0) el.textContent = String(years);
+    }
+  });
 })();
