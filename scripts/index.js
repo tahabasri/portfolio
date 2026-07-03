@@ -120,4 +120,63 @@
       if (years > 0) el.textContent = String(years);
     }
   });
+
+  /* ---------- Card pagination ---------- */
+  // Any grid with [data-page-size] gets paginated once its cards exceed the
+  // page size. Keeps long lists (talks, community) compact without extra pages.
+  document.querySelectorAll(".talk-grid[data-page-size]").forEach(function (grid) {
+    const pageSize = parseInt(grid.getAttribute("data-page-size"), 10) || 6;
+    const cards = Array.prototype.slice.call(grid.children);
+    if (cards.length <= pageSize) return;
+    const pageCount = Math.ceil(cards.length / pageSize);
+    let current = 0;
+
+    const pager = document.createElement("nav");
+    pager.className = "pager";
+    pager.setAttribute("aria-label", "Pagination");
+
+    const prev = document.createElement("button");
+    prev.className = "pager-btn";
+    prev.innerHTML = '<i class="fa-solid fa-arrow-left"></i>';
+    prev.setAttribute("aria-label", "Previous page");
+
+    const nums = document.createElement("div");
+    nums.className = "pager-nums";
+
+    const next = document.createElement("button");
+    next.className = "pager-btn";
+    next.innerHTML = '<i class="fa-solid fa-arrow-right"></i>';
+    next.setAttribute("aria-label", "Next page");
+
+    const pageBtns = [];
+    for (let p = 0; p < pageCount; p++) {
+      const b = document.createElement("button");
+      b.className = "pager-num";
+      b.textContent = String(p + 1);
+      b.setAttribute("aria-label", "Page " + (p + 1));
+      b.addEventListener("click", function () { go(p); });
+      nums.appendChild(b);
+      pageBtns.push(b);
+    }
+
+    pager.appendChild(prev);
+    pager.appendChild(nums);
+    pager.appendChild(next);
+    grid.parentNode.insertBefore(pager, grid.nextSibling);
+
+    function go(p) {
+      current = Math.max(0, Math.min(pageCount - 1, p));
+      cards.forEach(function (card, i) {
+        const onPage = i >= current * pageSize && i < (current + 1) * pageSize;
+        card.style.display = onPage ? "" : "none";
+      });
+      pageBtns.forEach(function (b, i) { b.classList.toggle("is-active", i === current); });
+      prev.disabled = current === 0;
+      next.disabled = current === pageCount - 1;
+    }
+
+    prev.addEventListener("click", function () { go(current - 1); });
+    next.addEventListener("click", function () { go(current + 1); });
+    go(0);
+  });
 })();

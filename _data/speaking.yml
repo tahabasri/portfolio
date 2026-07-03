@@ -1,0 +1,95 @@
+# ============================================================
+#  Speaking & Community, fully dynamic.
+#  Add a new talk by adding an entry; no code changes needed.
+#
+#  Both groups render as cards. Fields:
+#    conferences:
+#      event / edition / location / topic
+#      image : (optional) photo in img/speaking/  e.g. "img/speaking/nad-2023.jpg"
+#      video : (optional) video URL (YouTube, etc.)
+#      link  : (optional) other link (LinkedIn, event page)
+#    community:
+#      org / location / topic
+#      image / video / link : (optional)
+# ============================================================
+
+conferences:
+  - event: "French Touch Dreamin'"
+    edition: "2025"
+    location: "Paris, France"
+    topic: "Agentforce for Commerce: The Future of Commerce is Agentic"
+    image: ""
+
+  - event: "North Africa Dreamin'"
+    edition: "2025"
+    location: "Casablanca, Morocco"
+    topic: "Agentforce for Commerce: The Future of Commerce is Agentic"
+    image: ""
+
+  - event: "Dubai Dreamin'"
+    edition: "2024"
+    location: "Dubai, UAE"
+    topic: "Unveiling the Commerce Revolution: B2B & D2C with Data Cloud + AI"
+    image: ""
+
+  - event: "French Touch Dreamin'"
+    edition: "2024"
+    location: "Paris, France"
+    topic: "Understanding LWR: A Practical Guide to Enhanced Sites with Experience Cloud"
+    image: ""
+
+  - event: "North Africa Dreamin'"
+    edition: "2024"
+    location: "Casablanca, Morocco"
+    topic: "Revolutionizing Commerce: Einstein AI for Commerce Cloud"
+    image: ""
+
+  - event: "North Africa Dreamin'"
+    edition: "2023"
+    location: "Casablanca, Morocco"
+    topic: "Building LWR sites with Experience Cloud"
+    image: ""
+    video: "https://youtu.be/JHejvTDp9Lg"
+
+community:
+  # NOTE: editions below are placeholders — adjust the year on each as needed.
+  - org: "Salesforce Customer Success Day"
+    edition: "2025"
+    location: "Casablanca, Morocco"
+    topic: "1:1 customer consultation pods, working through live technical challenges"
+    image: ""
+  - org: "Ark-x Talent Group"
+    edition: "2024"
+    location: "Casablanca, Morocco"
+    topic: "Let's Talk Commerce: Salesforce Commerce in Real Life"
+    image: ""
+  - org: "Code with Sally"
+    edition: "2025"
+    location: "Online"
+    topic: "Salesforce Vibe Coding with Cursor: Build a Task Manager App"
+    image: ""
+  - org: "Casablanca Salesforce Developers Group"
+    edition: "2025"
+    location: "Casablanca, Morocco"
+    topic: "Auto-generate your Salesforce org documentation with open-source & Agentforce"
+    image: ""
+  - org: "Casablanca Salesforce Developers Group"
+    edition: "2025"
+    location: "Casablanca, Morocco"
+    topic: "Introduction to Retail Cloud"
+    image: ""
+  - org: "ALX Morocco & EFE Morocco"
+    edition: "2024"
+    location: "Morocco"
+    topic: "Commerce Cloud features"
+    image: ""
+  - org: "Casablanca Salesforce Developers Group"
+    edition: "2023"
+    location: "Casablanca, Morocco"
+    topic: "Introduction to Commerce Cloud"
+    image: ""
+  - org: "ALX Morocco"
+    edition: "2023"
+    location: "Morocco"
+    topic: "Prepare for the Salesforce Certified Administrator Exam"
+    image: ""

@@ -3,59 +3,47 @@
 #  The layout (_layouts/main.html) renders every item below.
 #
 #  Fields:
-#    year    : shown top-right of the card
-#    title   : card heading
-#    tags    : list of small pills
-#    desc    : one/two sentence description
-#    link    : where the button goes
-#    cta     : button label
-#    icon    : Font Awesome class for the button arrow (optional,
-#              defaults to fa-solid fa-arrow-right)
-#    accent  : "blue" (default) or "clay" — card colour theme
-#    images  : ONE OR MORE pictures. They render in the card art
-#              with a subtle hover effect. Drop real screenshots in
-#              img/ and list them here; multiple images stack/fan out.
+#    year     : shown top-right of the card
+#    title    : card heading
+#    tags     : list of small pills
+#    desc     : one/two sentence description
+#    link     : where the button goes
+#    cta      : button label
+#    icon     : Font Awesome class for the button arrow (optional,
+#               defaults to fa-solid fa-arrow-right)
+#    internal : true if the link is an on-page anchor (#section) — then
+#               it opens in the same tab instead of a new one
+#    accent   : "blue" (default) or "clay" — card colour theme
+#    images   : ZERO or more pictures. They render in the card art with a
+#               subtle hover effect. If omitted, the card art shows the
+#               `icon` as a large glyph instead.
 # ============================================================
 
-- year: "2024"
-  title: "Snippets — manage your code snippets, right in VS Code"
+- year: "Since 2021"
+  title: "Snippets: supercharge your snippets in VS Code"
   tags: ["VS Code Extension", "Open Source"]
-  desc: "A VS Code extension to bookmark, organise and reuse your snippets without leaving the editor — published on the Marketplace."
+  desc: "A VS Code extension to bookmark, organise and reuse code snippets without leaving the editor. 50k installs · 100k downloads, top-ranked in its category, and featured twice in GitHub's Release Radar."
   link: "https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets"
   cta: "View on Marketplace"
   accent: "blue"
   images:
     - "img/tools_VSCODE_logo.png"
 
-- year: "2023"
-  title: "Building LWR sites with Experience Cloud"
-  tags: ["Speaking", "NAD 2023"]
-  desc: "A live session on building fast, modern LWR sites with Salesforce Experience Cloud — what works, what to watch for, and why."
-  link: "https://youtu.be/JHejvTDp9Lg"
-  cta: "Watch the talk"
-  icon: "fa-solid fa-play"
-  accent: "clay"
-  images:
-    - "img/comp_SALESFORCE_logo.png"
-
-- year: "2021"
-  title: "take-a-hint — a tiny CLI framework for Java"
-  tags: ["Open Source", "Java"]
-  desc: "A small, zero-dependency framework that makes building friendly command-line tools in Java quick and pleasant."
-  link: "https://github.com/tahabasri/take-a-hint"
-  cta: "View on GitHub"
-  icon: "fa-brands fa-github"
-  accent: "blue"
-  images:
-    - "img/tools_VSCODE_logo.png"
-
 - year: "Ongoing"
-  title: "Writing — notes on code, craft & the Salesforce platform"
+  title: "Writing: notes on code, craft & the Salesforce platform"
   tags: ["Blog", "Medium"]
-  desc: "Long-form articles on process-as-code, developer experience and the small engineering details — published on Medium."
+  desc: "Long-form articles on Salesforce commerce, LWR, process-as-code and developer experience, published on Medium and in The Startup. Recent pieces: Headless Commerce Checkout, RTL Layouts in LWR, Buyer Group Extensibility."
   link: "https://tahabasri.medium.com/"
   cta: "Read the blog"
   icon: "fa-brands fa-medium"
   accent: "clay"
-  images:
-    - "img/comp_SALESFORCE_logo.png"
+
+- year: "Ongoing"
+  title: "Talks: speaking across the Trailblazer community"
+  tags: ["Speaking", "Community"]
+  desc: "Six Trailblazer Community Conferences and a steady stream of community sessions on Agentforce, Commerce Cloud, LWR and more, from Casablanca to Paris to Dubai."
+  link: "#speaking"
+  cta: "See all talks"
+  icon: "fa-solid fa-microphone"
+  internal: true
+  accent: "blue"

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Taha Basri — Developer, Instructor & Tech Enthusiast. Building & teaching on the Salesforce Platform.">
+    <meta name="description" content="Taha Basri · Developer, Instructor & Tech Enthusiast. Building & teaching on the Salesforce Platform.">
     <meta name="author" content="Taha Basri">
     <meta name="theme-color" content="#0b0f17">
     <meta property="og:title" content="{{ page.title }}">
@@ -27,7 +27,7 @@
   <body>
     <!-- ===================== SUBTLE ROTATING BACKGROUND ===================== -->
     <!-- Very faint Moroccan scenery that slowly cross-fades behind the whole site.
-         Fully dynamic: drop any image into img/bg/ and it joins the rotation —
+         Fully dynamic: drop any image into img/bg/ and it joins the rotation,
          no code changes needed. Timing is derived from the number of images. -->
     {% assign bgs = site.static_files | where_exp: "f", "f.path contains '/img/bg/'" | sort: "path" %}
     {% assign n = bgs | size %}
@@ -59,6 +59,7 @@
       </button>
       <nav class="nav-links" id="navLinks">
         <a href="#work">Work</a>
+        <a href="#speaking">Speaking</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -80,7 +81,7 @@
         <p class="hero-intro"><img class="wave" src="img/icons/wave.png" alt=""> Hey, I'm Taha</p>
         <h1 class="hero-title">
           <span class="hero-title-1">software</span>
-          <span class="hero-title-2">developer</span>
+          <span class="hero-title-2">engineer</span>
         </h1>
         <p class="hero-sub">
           Building &amp; teaching on the Salesforce Platform @
@@ -106,7 +107,7 @@
       <div class="what-grid">
         <p class="label"><img class="label-icon" src="img/icons/tarbouche.png" alt=""> WHAT I DO</p>
         <h2 class="statement" id="statement">
-          I turn ideas into software people actually <em>love</em> — clean code, clear teaching, and the small details that quietly do the work.
+          I turn ideas into software people actually <em>love</em>: clean code, clear teaching, and the small details that quietly do the work.
         </h2>
       </div>
 
@@ -115,7 +116,7 @@
           <p class="stat-num"><span class="js-years" data-since="2018">{{ 'now' | date: "%Y" | minus: 2018 }}</span>+</p>
           <hr class="hairline">
           <p class="stat-label">Years building</p>
-          <p class="stat-desc">software, teaching &amp; design — across Salesforce, Oracle &amp; CGI</p>
+          <p class="stat-desc">software, teaching &amp; design across Salesforce, Oracle &amp; CGI</p>
         </div>
         <div class="stat">
           <p class="stat-num">3</p>
@@ -135,7 +136,7 @@
       <div class="head-center">
         <p class="label center"><img class="label-icon" src="img/icons/tea.png" alt=""> SELECTED WORK</p>
         <h2 class="big-title">check out some of my work</h2>
-        <p class="muted center">A few things I've built, shipped &amp; written — and the thinking behind them.</p>
+        <p class="muted center">A few things I've built, shipped &amp; written, and the thinking behind them.</p>
       </div>
     </section>
 
@@ -152,35 +153,96 @@
             {% for tag in item.tags %}<span class="chip">{{ tag }}</span>{% endfor %}
           </div>
           <p class="card-desc">{{ item.desc }}</p>
-          <a class="btn-pill" href="{{ item.link }}" target="_blank" rel="noopener">
+          <a class="btn-pill" href="{{ item.link }}"{% unless item.internal %} target="_blank" rel="noopener"{% endunless %}>
             <span class="btn-arrow"><i class="{{ item.icon | default: 'fa-solid fa-arrow-right' }}"></i></span> {{ item.cta }}
           </a>
         </div>
         <div class="card-art">
+          {% if item.images and item.images.size > 0 %}
           <div class="shots shots-{{ item.images | size }}">
             {% for img in item.images %}
             <figure class="shot"><img src="{{ img }}" alt="{{ item.title }}" loading="lazy"></figure>
             {% endfor %}
           </div>
+          {% else %}
+          <div class="shots shots-icon">
+            <figure class="shot shot-glyph"><i class="{{ item.icon | default: 'fa-solid fa-arrow-right' }}"></i></figure>
+          </div>
+          {% endif %}
         </div>
       </article>
       {% endfor %}
     </div>
 
-    <!-- ===================== ABOUT — Moroccan roots ===================== -->
+    <!-- ===================== SPEAKING & COMMUNITY ===================== -->
+    <section class="band speaking" id="speaking">
+      <div class="head-center">
+        <p class="label center"><i class="fa-solid fa-microphone label-mark"></i> SPEAKING &amp; COMMUNITY</p>
+        <h2 class="big-title">sharing what I learn</h2>
+        <p class="muted center">Six Trailblazer Community Conferences and a steady stream of community sessions, from Casablanca to Paris to Dubai.</p>
+      </div>
+
+      <div class="talk-grid" data-page-size="6">
+        {% for c in site.data.speaking.conferences %}
+        <article class="talk">
+          <div class="talk-media{% unless c.image and c.image != '' %} talk-media-empty{% endunless %}"{% if c.image and c.image != '' %} style="background-image:url('{{ c.image }}')"{% endif %}>
+            {% unless c.image and c.image != '' %}<i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>{% endunless %}
+            {% if c.edition %}<span class="talk-badge">{{ c.edition }}</span>{% endif %}
+            {% if c.video %}<a class="talk-play" href="{{ c.video }}" target="_blank" rel="noopener" aria-label="Watch the talk"><i class="fa-solid fa-play"></i></a>{% endif %}
+          </div>
+          <div class="talk-body">
+            <p class="talk-event">{{ c.event }}<span class="talk-loc"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</span></p>
+            <h3 class="talk-topic">{{ c.topic }}</h3>
+            {% if c.video %}
+            <a class="talk-link" href="{{ c.video }}" target="_blank" rel="noopener"><i class="fa-solid fa-play"></i> Watch the talk</a>
+            {% elsif c.link %}
+            <a class="talk-link" href="{{ c.link }}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      <div class="community">
+        <p class="label center"><i class="fa-solid fa-users label-mark"></i> COMMUNITY &amp; MEETUPS</p>
+        <div class="talk-grid" data-page-size="6">
+          {% for c in site.data.speaking.community %}
+          <article class="talk">
+            <div class="talk-media{% unless c.image and c.image != '' %} talk-media-empty{% endunless %}"{% if c.image and c.image != '' %} style="background-image:url('{{ c.image }}')"{% endif %}>
+              {% unless c.image and c.image != '' %}<i class="fa-solid fa-users" aria-hidden="true"></i>{% endunless %}
+              {% if c.edition %}<span class="talk-badge">{{ c.edition }}</span>{% endif %}
+              {% if c.video %}<a class="talk-play" href="{{ c.video }}" target="_blank" rel="noopener" aria-label="Watch"><i class="fa-solid fa-play"></i></a>{% endif %}
+            </div>
+            <div class="talk-body">
+              <p class="talk-event">{{ c.org }}<span class="talk-loc"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</span></p>
+              <h3 class="talk-topic">{{ c.topic }}</h3>
+              {% if c.video %}
+              <a class="talk-link" href="{{ c.video }}" target="_blank" rel="noopener"><i class="fa-solid fa-play"></i> Watch</a>
+              {% elsif c.link %}
+              <a class="talk-link" href="{{ c.link }}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
+              {% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT (Moroccan roots) ===================== -->
     <section class="band about" id="about">
       <span class="zellige-line" aria-hidden="true"></span>
       <div class="about-grid">
         <div class="about-gallery" aria-hidden="false">
-          <figure class="frame frame-a"><img src="img/about/then.JPG" alt="Taha as a child"><figcaption>then.</figcaption></figure>
-          <figure class="frame frame-b"><img src="img/about/roots.jpg" alt="Roots"><figcaption>roots.</figcaption></figure>
+          <figure class="frame frame-a"><img src="img/about/then.JPG" alt="The first computer I owned"><figcaption>first tech.</figcaption></figure>
+          <figure class="frame frame-b"><img src="img/about/roots.jpg" alt="Meknes, Morocco"><figcaption>roots.</figcaption></figure>
           <figure class="frame frame-c"><img src="img/about/now.JPG" alt="Taha today"><figcaption>now.</figcaption></figure>
         </div>
         <div class="about-text">
           <p class="label"><img class="label-icon" src="img/icons/door.png" alt=""> ABOUT ME</p>
           <h2 class="big-title left">from <em>Morocco</em>, with code</h2>
-          <p>I'm a Moroccan developer — raised on mint tea, zellige patterns and the kind of hospitality that turns strangers into family. That eye for craft and colour, sharpened long before I wrote production code, is still how I approach engineering: patient, detailed, made to last.</p>
-          <p>My journey into tech started early — I built my first Photoshop project back in 2009. Since then, over <span class="js-years" data-since="2018">{{ 'now' | date: "%Y" | minus: 2018 }}</span>+ years across <strong>Salesforce</strong>, <strong>Oracle</strong> and <strong>CGI</strong>, I've shipped software, mentored teams and obsessed over developer experience — carrying a bit of home into everything I make.</p>
+          <p>I'm Taha, a developer, consultant and instructor who grew up in <strong>Meknes</strong>, one of Morocco's old imperial cities. I studied there and started my career there, and something about a place built by hand over centuries stuck with me: the patience, the craft, the love of getting the small details exactly right. I bring the same to the software I make.</p>
+          <p>My story with tech started young. I was a kid in <strong>2004</strong> the first time I sat in front of a computer, and I never really got up. That curiosity carried me from Java engineering in Morocco to the Salesforce platform, and eventually to <strong>Dubai</strong>, with a strong coffee (or a mint tea) never far away.</p>
+          <p>These days I build and teach on Salesforce: shipping the solutions behind great customer experiences, and sharing what I learn through talks, writing and open source. If you're trying to make something complex feel simple, that's exactly the kind of problem I love, so let's build something.</p>
           <p class="signature">Taha · طه</p>
         </div>
       </div>
@@ -190,57 +252,26 @@
     <section class="band experience" id="experience">
       <div class="head-left">
         <h2 class="big-title left">the journey so far</h2>
-        <p class="muted">From enterprise consulting to the world's #1 CRM — building, teaching and shipping along the way.</p>
+        <p class="muted">From enterprise consulting to the world's #1 CRM, building, teaching and shipping along the way.</p>
       </div>
 
       <div class="timeline" id="timeline">
         <div class="timeline-track">
-          <!-- Each role: edit dates / titles to taste -->
-          <div class="tl-item tl-up">
-            <span class="tl-date tl-current"><span class="dot"></span> Present</span>
+          {% for job in site.data.experience %}
+          <div class="tl-item {% cycle 'tl-up', 'tl-down' %}">
+            <span class="tl-date{% if job.current %} tl-current{% endif %}">{% if job.current %}<span class="dot"></span> {% endif %}{{ job.period }}</span>
             <div class="xp-card">
               <div class="xp-head">
-                <img class="xp-logo" src="img/comp_SALESFORCE_logo.png" alt="Salesforce">
+                <img class="xp-logo" src="{{ job.logo }}" alt="{{ job.company }}">
               </div>
-              <p class="xp-role">Developer &amp; Instructor</p>
-              <p class="xp-co">Salesforce</p>
+              <p class="xp-role">{{ job.role }}</p>
+              <p class="xp-co"><i class="fa-solid fa-location-dot"></i> {{ job.location }}</p>
               <ul class="xp-list">
-                <li>Build on the <strong>Salesforce Platform</strong> — LWR sites, Experience Cloud &amp; custom apps.</li>
-                <li>Teach and mentor developers; spoke on LWR at <strong>NAD 2023</strong>.</li>
-                <li>Ship developer tooling, including the <strong>Snippets</strong> VS Code extension.</li>
+                {% for point in job.points %}<li>{{ point }}</li>{% endfor %}
               </ul>
             </div>
           </div>
-
-          <div class="tl-item tl-down">
-            <span class="tl-date">Earlier</span>
-            <div class="xp-card">
-              <div class="xp-head">
-                <img class="xp-logo" src="img/comp_ORACLE_logo.png" alt="Oracle">
-              </div>
-              <p class="xp-role">Software Engineer</p>
-              <p class="xp-co">Oracle</p>
-              <ul class="xp-list">
-                <li>Engineered enterprise software and integrations at scale.</li>
-                <li>Worked across the stack on complex business platforms.</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="tl-item tl-up">
-            <span class="tl-date">Started</span>
-            <div class="xp-card">
-              <div class="xp-head">
-                <img class="xp-logo" src="img/comp_CGI_logo.png" alt="CGI">
-              </div>
-              <p class="xp-role">Software Developer</p>
-              <p class="xp-co">CGI</p>
-              <ul class="xp-list">
-                <li>Delivered consulting projects for enterprise clients.</li>
-                <li>Built the foundations of an engineering journey.</li>
-              </ul>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
