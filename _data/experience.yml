@@ -14,7 +14,7 @@
 # ============================================================
 
 - company: "Salesforce"
-  logo: "img/comp_SALESFORCE_logo.png"
+  logo: "img/companies/comp_SALESFORCE_logo.png"
   role: "Senior Technical Consultant"
   location: "Dubai, UAE"
   period: "Now"
@@ -25,7 +25,7 @@
     - "Speak &amp; mentor across the Trailblazer community."
 
 - company: "Oracle"
-  logo: "img/comp_ORACLE_logo.png"
+  logo: "img/companies/comp_ORACLE_logo.png"
   role: "Senior Member of Technical Staff"
   location: "Casablanca, Morocco"
   period: "Earlier"
@@ -34,7 +34,7 @@
     - "Built automation and tooling that streamlined how GraalVM shipped."
 
 - company: "CGI"
-  logo: "img/comp_CGI_logo.png"
+  logo: "img/companies/comp_CGI_logo.png"
   role: "Senior Java/JavaEE Developer"
   location: "Fez, Morocco"
   period: "Started"
