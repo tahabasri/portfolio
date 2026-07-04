@@ -1,0 +1,43 @@
+# ============================================================
+#  The journey so far, an experience timeline.
+#  Add / reorder roles here; the layout renders them left to right
+#  (alternating up/down) and stacks them on mobile.
+#
+#  Fields:
+#    company  : company name (used for the logo alt text)
+#    logo     : path to the logo (shown at natural proportions, recoloured white)
+#    role     : your title
+#    location : shown under the role
+#    period   : short phase label on the timeline pill (e.g. "Now", "Earlier")
+#    current  : true for the present role (mint "now" styling)
+#    points   : bullet list of highlights (basic HTML allowed)
+# ============================================================
+
+- company: "Salesforce"
+  logo: "img/companies/comp_SALESFORCE_logo.png"
+  role: "Senior Technical Consultant"
+  location: "Dubai, UAE"
+  period: "Now"
+  current: true
+  points:
+    - "Build &amp; lead on the <strong>Salesforce Platform</strong>: Commerce Cloud, Order Management &amp; Experience Cloud."
+    - "Own technical design, CI/CD and delivery; lead and mentor development teams."
+    - "Speak &amp; mentor across the Trailblazer community."
+
+- company: "Oracle"
+  logo: "img/companies/comp_ORACLE_logo.png"
+  role: "Senior Member of Technical Staff"
+  location: "Casablanca, Morocco"
+  period: "Earlier"
+  points:
+    - "Helped take <strong>GraalVM</strong> to production, automating large parts of its release cycle."
+    - "Built automation and tooling that streamlined how GraalVM shipped."
+
+- company: "CGI"
+  logo: "img/companies/comp_CGI_logo.png"
+  role: "Senior Java/JavaEE Developer"
+  location: "Fez, Morocco"
+  period: "Started"
+  points:
+    - "Built and maintained enterprise <strong>Java/JavaEE</strong> applications (Spring, Hibernate)."
+    - "Coached junior developers; recognised as a <strong>2018 Top Talent</strong>."

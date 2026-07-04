@@ -1,0 +1,49 @@
+# ============================================================
+#  Selected Work — edit this file to add / reorder / remove work.
+#  The layout (_layouts/main.html) renders every item below.
+#
+#  Fields:
+#    year     : shown top-right of the card
+#    title    : card heading
+#    tags     : list of small pills
+#    desc     : one/two sentence description
+#    link     : where the button goes
+#    cta      : button label
+#    icon     : Font Awesome class for the button arrow (optional,
+#               defaults to fa-solid fa-arrow-right)
+#    internal : true if the link is an on-page anchor (#section) — then
+#               it opens in the same tab instead of a new one
+#    accent   : "blue" (default) or "clay" — card colour theme
+#    images   : ZERO or more pictures. They render in the card art with a
+#               subtle hover effect. If omitted, the card art shows the
+#               `icon` as a large glyph instead.
+# ============================================================
+
+- year: "Since 2021"
+  title: "Snippets: supercharge your snippets in VS Code"
+  tags: ["VS Code Extension", "Open Source"]
+  desc: "A VS Code extension to bookmark, organise and reuse code snippets without leaving the editor. 50k installs · 100k downloads, top-ranked in its category, and featured twice in GitHub's Release Radar."
+  link: "https://marketplace.visualstudio.com/items?itemName=tahabasri.snippets"
+  cta: "View on Marketplace"
+  accent: "blue"
+  images:
+    - "img/work/snippets.png"
+
+- year: "Ongoing"
+  title: "Writing: notes on code, craft & the Salesforce platform"
+  tags: ["Blog", "Medium"]
+  desc: "Long-form articles on Salesforce commerce, LWR, process-as-code and developer experience, published on Medium and in The Startup. Recent pieces: Headless Commerce Checkout, RTL Layouts in LWR, Buyer Group Extensibility."
+  link: "https://tahabasri.medium.com/"
+  cta: "Read the blog"
+  icon: "fa-brands fa-medium"
+  accent: "clay"
+
+- year: "Ongoing"
+  title: "Talks: speaking across the Trailblazer community"
+  tags: ["Speaking", "Community"]
+  desc: "Six Trailblazer Community Conferences and a steady stream of community sessions on Agentforce, Commerce Cloud, LWR and more."
+  link: "#speaking"
+  cta: "See all talks"
+  icon: "fa-solid fa-microphone"
+  internal: true
+  accent: "blue"
