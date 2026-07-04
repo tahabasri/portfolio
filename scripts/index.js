@@ -20,16 +20,24 @@
     });
   }
 
-  /* ---------- Nav shadow on scroll ---------- */
+  /* ---------- Nav: shadow + collapse-on-scroll ---------- */
+  // At the top of the page the nav shows its links inline (mobile-friendly);
+  // once the user scrolls it collapses to the 3-dot hamburger (see CSS .nav.scrolled).
   const nav = document.getElementById("nav");
   const onScrollNav = function () {
     if (!nav) return;
-    nav.style.boxShadow =
-      window.scrollY > 40
-        ? "0 12px 34px rgba(20, 60, 120, 0.22)"
-        : "0 10px 30px rgba(20, 60, 120, 0.16)";
+    const scrolled = window.scrollY > 40;
+    nav.classList.toggle("scrolled", scrolled);
+    nav.style.boxShadow = scrolled
+      ? "0 12px 34px rgba(0, 0, 0, 0.55)"
+      : "0 10px 30px rgba(0, 0, 0, 0.45)";
+    if (!scrolled && links) {
+      links.classList.remove("open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    }
   };
   window.addEventListener("scroll", onScrollNav, { passive: true });
+  onScrollNav();
 
   /* ---------- Reveal-up via IntersectionObserver ---------- */
   const revealEls = document.querySelectorAll(".reveal-up");
