@@ -19,7 +19,7 @@
     <title>{{ page.title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="css/style.css" rel="stylesheet">
   </head>
@@ -87,6 +87,10 @@
           Building &amp; teaching on the Salesforce Platform @
           <span class="hero-chip"><img src="img/companies/comp_SALESFORCE_logo.png" alt="Salesforce"></span>
         </p>
+        <div class="hero-cta">
+          <a class="btn-solid" href="#work">See my work <i class="fa-solid fa-arrow-down"></i></a>
+          <a class="btn-outline" href="#contact">Get in touch</a>
+        </div>
       </div>
       <div class="hero-foot">
         <span class="meta-left">
@@ -96,7 +100,6 @@
           <span class="meta-key">from</span>
           <img class="flag" src="img/icons/morocco.png" alt="Morocco"> Morocco
         </span>
-        <span class="meta-right">Code &gt; Coffee &amp; Tea &gt; Repeat</span>
       </div>
     </section>
 
@@ -105,7 +108,6 @@
       <hr class="hairline">
 
       <div class="what-grid">
-        <p class="label"><img class="label-icon" src="img/icons/tarbouche.png" alt=""> WHAT I DO</p>
         <h2 class="statement" id="statement">
           I turn ideas into software people actually <em>love</em>: clean code, clear teaching, and the small details that quietly do the work.
         </h2>
@@ -134,7 +136,6 @@
     <!-- ===================== SELECTED WORK ===================== -->
     <section class="band work-head" id="work">
       <div class="head-center">
-        <p class="label center"><img class="label-icon" src="img/icons/tea.png" alt=""> SELECTED WORK</p>
         <h2 class="big-title">check out some of my work</h2>
         <p class="muted center">A few things I've built, shipped &amp; written, and the thinking behind them.</p>
       </div>
@@ -177,7 +178,6 @@
     <!-- ===================== SPEAKING & COMMUNITY ===================== -->
     <section class="band speaking" id="speaking">
       <div class="head-center">
-        <p class="label center"><i class="fa-solid fa-microphone label-mark"></i> SPEAKING &amp; COMMUNITY</p>
         <h2 class="big-title">sharing what I learn</h2>
         <p class="muted center">Six Trailblazer Community Conferences and a steady stream of community sessions.</p>
       </div>
@@ -204,23 +204,18 @@
       </div>
 
       <div class="community">
-        <p class="label center"><i class="fa-solid fa-users label-mark"></i> COMMUNITY &amp; MEETUPS</p>
-        <div class="talk-grid" data-page-size="6">
+        <h3 class="community-head">Community &amp; meetups</h3>
+        <div class="row-grid" data-page-size="6">
           {% for c in site.data.speaking.community %}
-          <article class="talk">
-            <div class="talk-media{% unless c.image and c.image != '' %} talk-media-empty{% endunless %}"{% if c.image and c.image != '' %} style="background-image:url('{{ c.image }}')"{% endif %}>
+          <article class="talk-row">
+            <a class="talk-row-media{% unless c.image and c.image != '' %} talk-media-empty{% endunless %}"{% if c.image and c.image != '' %} style="background-image:url('{{ c.image }}')"{% endif %}{% if c.video %} href="{{ c.video }}" target="_blank" rel="noopener" aria-label="Watch"{% elsif c.link %} href="{{ c.link }}" target="_blank" rel="noopener"{% endif %}>
               {% unless c.image and c.image != '' %}<i class="fa-solid fa-users" aria-hidden="true"></i>{% endunless %}
-              {% if c.edition %}<span class="talk-badge">{{ c.edition }}</span>{% endif %}
-              {% if c.video %}<a class="talk-play" href="{{ c.video }}" target="_blank" rel="noopener" aria-label="Watch"><i class="fa-solid fa-play"></i></a>{% endif %}
-            </div>
-            <div class="talk-body">
-              <p class="talk-event">{{ c.org }}<span class="talk-loc"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</span></p>
-              <h3 class="talk-topic">{{ c.topic }}</h3>
-              {% if c.video %}
-              <a class="talk-link" href="{{ c.video }}" target="_blank" rel="noopener"><i class="fa-solid fa-play"></i> Watch</a>
-              {% elsif c.link %}
-              <a class="talk-link" href="{{ c.link }}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> View</a>
-              {% endif %}
+              {% if c.video %}<span class="talk-row-play"><i class="fa-solid fa-play"></i></span>{% endif %}
+            </a>
+            <div class="talk-row-body">
+              <p class="talk-event">{{ c.org }}{% if c.edition %}<span class="talk-year">{{ c.edition }}</span>{% endif %}</p>
+              <h4 class="talk-row-topic">{{ c.topic }}</h4>
+              <p class="talk-loc"><i class="fa-solid fa-location-dot"></i> {{ c.location }}</p>
             </div>
           </article>
           {% endfor %}
@@ -238,7 +233,6 @@
           <figure class="frame frame-c"><img src="img/about/now.JPG" alt="Taha today"><figcaption>now.</figcaption></figure>
         </div>
         <div class="about-text">
-          <p class="label"><img class="label-icon" src="img/icons/door.png" alt=""> ABOUT ME</p>
           <h2 class="big-title left">from <em>Morocco</em>, with code</h2>
           <p>I'm Taha, a developer, consultant and instructor who grew up in <strong>Meknes</strong>, one of Morocco's old imperial cities. I studied there and started my career there, and something about a place built by hand over centuries stuck with me: the patience, the craft, the love of getting the small details exactly right. I bring the same to the software I make.</p>
           <p>My story with tech started young. I was a kid in <strong>2004</strong> the first time I sat in front of a computer, and I never really got up. That curiosity carried me from Java engineering in Morocco to the Salesforce platform, and eventually to <strong>Dubai</strong>, with a strong coffee (or a mint tea) never far away.</p>
