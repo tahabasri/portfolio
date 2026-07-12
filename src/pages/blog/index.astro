@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import PostList from '../../components/PostList.astro';
+import { BLOG_TITLE, BLOG_DESCRIPTION } from '../../consts';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={BLOG_TITLE} description={BLOG_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main class="blog-main">
+			<header class="blog-head">
+				<h1 class="big-title left">notes on code &amp; craft</h1>
+				<p class="muted">
+					Long-form writing on Salesforce commerce, LWR, process-as-code and developer experience.
+					Includes the <a class="series-badge" href="/blog/sfdefacto/">SF DeFacto</a> series.
+				</p>
+			</header>
+			<PostList posts={posts} />
+		</main>
+		<Footer />
+		<script is:inline src="/scripts/index.js" defer></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import PostList from '../../components/PostList.astro';
+
+const posts = (
+	await getCollection('blog', ({ data }) => !data.draft && data.series === 'sfdefacto')
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title="SF DeFacto · Taha Basri"
+			description="SF DeFacto: a series on the de facto ways to solve real Salesforce problems — commerce, LWR and the platform's less-travelled corners."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="blog-main">
+			<header class="series-head">
+				<span class="series-badge">Series</span>
+				<h1 class="big-title left">SF <em>DeFacto</em></h1>
+				<p>
+					The de facto ways to solve real Salesforce problems. Field notes from commerce
+					implementations, LWR sites and the platform's less-travelled corners — the pragmatic
+					solutions that end up becoming the standard ones.
+				</p>
+			</header>
+			<PostList posts={posts} />
+		</main>
+		<Footer />
+		<script is:inline src="/scripts/index.js" defer></script>
+	</body>
+</html>

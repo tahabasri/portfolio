@@ -31,11 +31,12 @@
 
 - year: "Ongoing"
   title: "Writing: notes on code, craft & the Salesforce platform"
-  tags: ["Blog", "Medium"]
-  desc: "Long-form articles on Salesforce commerce, LWR, process-as-code and developer experience, published on Medium and in The Startup. Recent pieces: Headless Commerce Checkout, RTL Layouts in LWR, Buyer Group Extensibility."
-  link: "https://tahabasri.medium.com/"
+  tags: ["Blog", "SF DeFacto"]
+  desc: "Long-form articles on Salesforce commerce, LWR, process-as-code and developer experience, including the SF DeFacto series. Recent pieces: Headless Commerce Checkout, RTL Layouts in LWR, Buyer Group Extensibility."
+  link: "/blog/"
   cta: "Read the blog"
-  icon: "fa-brands fa-medium"
+  icon: "fa-solid fa-pen-nib"
+  internal: true
   accent: "clay"
 
 - year: "Ongoing"

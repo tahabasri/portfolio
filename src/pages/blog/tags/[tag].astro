@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../../components/BaseHead.astro';
+import Footer from '../../../components/Footer.astro';
+import Header from '../../../components/Header.astro';
+import PostList from '../../../components/PostList.astro';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog', ({ data }) => !data.draft);
+	const tags = [...new Set(posts.flatMap((post) => post.data.tags))];
+	return tags.map((tag) => ({
+		params: { tag },
+		props: {
+			posts: posts
+				.filter((post) => post.data.tags.includes(tag))
+				.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+		},
+	}));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Posts tagged "${tag}" · Taha Basri`}
+			description={`Blog posts tagged "${tag}" — Salesforce, code & craft by Taha Basri.`}
+		/>
+	</head>
+	<body>
+		<Header />
+		<main class="blog-main">
+			<header class="blog-head">
+				<p class="post-meta"><a href="/blog/">← All posts</a></p>
+				<h1 class="big-title left">tagged <em>{tag}</em></h1>
+			</header>
+			<PostList posts={posts} />
+		</main>
+		<Footer />
+		<script is:inline src="/scripts/index.js" defer></script>
+	</body>
+</html>
