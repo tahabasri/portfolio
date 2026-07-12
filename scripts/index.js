@@ -132,7 +132,7 @@
   /* ---------- Card pagination ---------- */
   // Any grid with [data-page-size] gets paginated once its cards exceed the
   // page size. Keeps long lists (talks, community) compact without extra pages.
-  document.querySelectorAll(".talk-grid[data-page-size]").forEach(function (grid) {
+  document.querySelectorAll("[data-page-size]").forEach(function (grid) {
     const pageSize = parseInt(grid.getAttribute("data-page-size"), 10) || 6;
     const cards = Array.prototype.slice.call(grid.children);
     if (cards.length <= pageSize) return;
