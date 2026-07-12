@@ -5,6 +5,7 @@ pubDate: 2020-03-16T21:18:35Z
 tags: ["process-as-code", "automation", "devops"]
 mediumUrl: "https://medium.com/@tahabasri/manage-process-as-code-faa03e4c24c1"
 heroImage: "./hero.jpeg"
+heroCaption: 'Photo by <a href="https://unsplash.com/@marvelous" target="_blank" rel="noopener">Marvin Meyer</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>'
 ---
 
 > This post is one of two parts article, this post does not require a strong technical background as it only explains the fundamentals of process management and the idea behind Process as Code.

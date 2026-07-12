@@ -6,6 +6,7 @@ tags: ["salesforce", "commerce-cloud", "payments", "api"]
 series: "sfdefacto"
 mediumUrl: "https://medium.com/@tahabasri/sf-defacto-1-salesforce-headless-commerce-checkout-with-saved-payment-method-a38d76e79c78"
 heroImage: "./hero.jpg"
+heroCaption: 'Photo by <a href="https://unsplash.com/@sumup" target="_blank" rel="noopener">SumUp</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>'
 ---
 
 ## Context
@@ -32,9 +33,12 @@ This niche use case may be necessary if the following business requirements appl
 
 Import the following collection to access the APIs mentioned in this solution: [Headless Commerce APIs.postman_collection.json](/files/blog/sfdefacto-headless-checkout-saved-payment-method/headless-commerce-apis.postman_collection.json).
 
+
 ## Headless Commerce Checkout Process with Saved Payment Method (Salesforce Payments)
 
 The following flow outlines the sequence of processes and API calls required to create an order from a cart. As mentioned in the notes section, the flow is not fully API-driven. Custom logic is introduced as a workaround after authorizing payment. This is necessary because the `checkouts/active/payments` API does not yet support Saved Payment Method records.
+
+![Headless checkout flow with saved payment method: sequence of API calls from active cart to placed order](./checkout-flow.png)
 
 1. **Get Active Cart** — `GET` [Commerce Webstore Cart](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-cart-ref?meta=getCartSummary)
 2. **Start Checkout** — `POST` [Commerce Webstore Checkouts](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/connect_resources_commerce_webstore_checkouts_start_checkout.htm)

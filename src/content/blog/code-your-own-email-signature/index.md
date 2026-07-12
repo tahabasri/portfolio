@@ -5,6 +5,7 @@ pubDate: 2020-12-03T21:55:22Z
 tags: ["html", "css", "tutorial"]
 mediumUrl: "https://medium.com/@tahabasri/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362"
 heroImage: "./hero.jpeg"
+heroCaption: 'Photo by <a href="https://unsplash.com/@solenfeyissa" target="_blank" rel="noopener">Solen Feyissa</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>'
 ---
 
 So, you got bored of the classic email signature you keep sending to your co-workers? You have probably searched for some inspiring signatures in Pinterest and you found some. Still, you couldn't mimic them in your email client as it provides you with a limited text editor with few customization options.

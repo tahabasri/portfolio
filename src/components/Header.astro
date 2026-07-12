@@ -3,7 +3,7 @@
 // /scripts/index.js) but scoped to the blog: visitors may land here directly,
 // so it shows where they are and one isolated link back to the portfolio.
 const { pathname } = Astro.url;
-const onSfdefacto = pathname.startsWith('/blog/sfdefacto');
+const onSfdefacto = pathname === '/blog/sfdefacto' || pathname === '/blog/sfdefacto/';
 ---
 
 <header id="nav" class="nav">

@@ -19,6 +19,8 @@ const blog = defineCollection({
 			// Original Medium URL, for the record
 			mediumUrl: z.string().url().optional(),
 			heroImage: z.optional(image()),
+			// attribution/caption under the hero (inline HTML allowed, e.g. Unsplash credit links)
+			heroCaption: z.string().optional(),
 			draft: z.boolean().default(false),
 		}),
 });

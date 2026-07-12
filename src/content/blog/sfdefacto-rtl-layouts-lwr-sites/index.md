@@ -6,6 +6,7 @@ tags: ["salesforce", "experience-cloud", "lwr", "css"]
 series: "sfdefacto"
 mediumUrl: "https://medium.com/@tahabasri/sf-defacto-2-support-rtl-layouts-in-lwr-sites-f65fe0ff5caa"
 heroImage: "./hero.jpg"
+heroCaption: 'Photo by <a href="https://unsplash.com/@ohutcherson" target="_blank" rel="noopener">Olivia Hutcherson</a> on <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>'
 ---
 
 ## Context
