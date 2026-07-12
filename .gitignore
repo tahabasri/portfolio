@@ -17,8 +17,7 @@ node_modules/
 customers/**
 
 # migration working files
-docs/medium-export.zip
-medium-export/
-
-.claude
 docs
+
+# ai files
+.claude
