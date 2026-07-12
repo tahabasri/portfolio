@@ -1,0 +1,2 @@
+- Favicon was generated from https://favicon.io/favicon-generator/
+- Design inspired from https://www.mattdavella.com/

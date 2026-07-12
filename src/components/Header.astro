@@ -1,0 +1,18 @@
+---
+// Blog nav — same pill as the portfolio (styles in /css/style.css, toggle in
+// /scripts/index.js) but scoped to the blog: visitors may land here directly,
+// so it shows where they are and one isolated link back to the portfolio.
+const { pathname } = Astro.url;
+const onSfdefacto = pathname === '/blog/sfdefacto' || pathname === '/blog/sfdefacto/';
+---
+
+<header id="nav" class="nav">
+	<button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+		<span></span><span></span><span></span>
+	</button>
+	<nav class="nav-links" id="navLinks">
+		<a href="/blog/" class:list={[{ 'is-current': !onSfdefacto }]}>Blog</a>
+		<a href="/blog/sfdefacto/" class:list={[{ 'is-current': onSfdefacto }]}>SF DeFacto</a>
+		<a href="/" class="nav-ext">Portfolio <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+	</nav>
+</header>
