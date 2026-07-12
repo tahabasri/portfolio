@@ -1,7 +1,7 @@
 ---
 title: "SF DeFacto #1 — Salesforce Headless Commerce Checkout with Saved Payment Method"
 description: "Implement headless B2B/D2C Commerce checkout (cart-to-order) using a customer's saved payment method, with Salesforce Payments and the Commerce Payments APIs."
-pubDate: 2025-05-28
+pubDate: 2025-05-28T22:50:41Z
 tags: ["salesforce", "commerce-cloud", "payments", "api"]
 series: "sfdefacto"
 mediumUrl: "https://medium.com/@tahabasri/sf-defacto-1-salesforce-headless-commerce-checkout-with-saved-payment-method-a38d76e79c78"

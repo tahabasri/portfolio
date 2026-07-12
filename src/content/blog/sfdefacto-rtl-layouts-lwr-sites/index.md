@@ -1,7 +1,7 @@
 ---
 title: "SF DeFacto #2 — Support RTL Layouts in LWR Sites"
 description: "Implement a dynamic layout supporting RTL languages (like Arabic) in LWR Sites with Experience Cloud, using a head-markup script and targeted CSS adjustments."
-pubDate: 2025-05-28
+pubDate: 2025-05-28T23:15:39Z
 tags: ["salesforce", "experience-cloud", "lwr", "css"]
 series: "sfdefacto"
 mediumUrl: "https://medium.com/@tahabasri/sf-defacto-2-support-rtl-layouts-in-lwr-sites-f65fe0ff5caa"

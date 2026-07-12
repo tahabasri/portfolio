@@ -1,7 +1,7 @@
 ---
 title: "Manage Process as Code"
 description: "The fundamentals of process management and the idea behind Process as Code: defining, codifying and executing your processes as programs instead of manual operations."
-pubDate: 2020-03-16
+pubDate: 2020-03-16T21:18:35Z
 tags: ["process-as-code", "automation", "devops"]
 mediumUrl: "https://medium.com/@tahabasri/manage-process-as-code-faa03e4c24c1"
 heroImage: "./hero.jpeg"

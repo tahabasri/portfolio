@@ -1,7 +1,7 @@
 ---
 title: "Can't Find the Perfect Email Signature? Code Your Own!"
 description: "Bored of your plain email signature? Build your own with basic HTML and CSS, preview it in the browser, and paste it into any email client."
-pubDate: 2020-12-03
+pubDate: 2020-12-03T21:55:22Z
 tags: ["html", "css", "tutorial"]
 mediumUrl: "https://medium.com/@tahabasri/cant-find-the-perfect-email-signature-for-you-code-your-own-4c8d7f270362"
 heroImage: "./hero.jpeg"

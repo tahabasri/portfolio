@@ -4,84 +4,128 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Personal portfolio for Taha Basri — a **single-page Jekyll static site** served at https://tahabasri.com (custom domain via `CNAME`), deployed by GitHub Pages from the **`gh-pages`** branch. `master` is the repo's default/base branch for PRs; active work happens on `new-version`.
+Personal site for Taha Basri — **one Astro static site** serving the portfolio at
+https://tahabasri.com and the blog at https://tahabasri.com/blog. Deployed to **GitHub Pages via
+GitHub Actions** (`.github/workflows/deploy.yml`, `withastro/action`) on every push to **`master`**
+(the default branch). The old Jekyll site is preserved on the `legacy-site` branch — don't delete
+that branch. The `gh-pages` branch is retired as a deploy source.
 
-The site is a **dark, modern, Moroccan-accented** theme (deep navy surfaces, sky-blue accent, terracotta "clay" highlights). Content is **data-driven** — Selected Work, Speaking & Community, and the Experience timeline all render from `_data/*.yml`, so most content edits are YAML edits, not markup edits.
+The design is **dark, modern, Moroccan-accented** (deep navy surfaces, sky-blue accent, terracotta
+"clay" highlights; Space Grotesk + Inter + Caveat). The portfolio page is a pixel-identical port of
+the legacy design; blog pages reuse the same design system.
 
 ## Commands
 
 ```bash
-jekyll serve                 # local dev at http://localhost:4000, watches + rebuilds on change
-jekyll build                 # one-off build into _site/
-rm -rf _site .jekyll-cache   # force a clean state (see gotcha below)
+npm run dev       # local dev at http://localhost:4321, hot reload
+npm run build     # build into dist/ (also validates content collections)
+npm run preview   # serve the built dist/
+npx astro sync    # regenerate content-collection types (after schema changes)
 ```
 
-- **Run `jekyll` directly, not `bundle exec jekyll`.** Jekyll is installed as a system gem and is intentionally *not* in the `Gemfile` (the Gemfile only carries runtime deps: `webrick`, `kramdown-parser-gfm`, `nokogiri`, `jekyll-watch`). `bundle exec jekyll` fails with "command not found". The `jekyll` entry in `package.json` is vestigial — there is no npm/Node build step.
-- **Stale-build gotcha:** a plain `jekyll build` can emit stale output because `.jekyll-cache` isn't always invalidated on asset/layout edits. If a change isn't reflected, `rm -rf _site .jekyll-cache` and rebuild, or just use `jekyll serve` which watches. GitHub Pages always builds clean, so this only bites local builds.
-- No tests, no linter, no CI config in this repo.
+No tests or linter. `npm run build` is the health check — it fails on broken frontmatter,
+missing images, or bad imports.
+
+## Source of truth: profile.md
+
+**`profile.md` at the repo root is the single source of truth** for bio, talks, milestones,
+projects and links. Pages render from the structured copies in `src/data/*.yml` — when content
+changes, update `profile.md` **and** the matching data file together; never duplicate profile
+content in page bodies.
 
 ## Architecture
 
-The entire visible site is **one page**. `index.md` is an empty front-matter stub (`layout: main`); **all markup lives in [_layouts/main.html](_layouts/main.html)**. There are no `_includes` and no collections. To change the site you touch four things: the layout, `css/style.css`, `scripts/index.js`, and the `_data/*.yml` files.
+- **[src/pages/index.astro](src/pages/index.astro)** — the portfolio home, a 1:1 port of the legacy
+  Jekyll layout: same markup, class names and asset paths. Hardcoded copy (hero, statement, About
+  prose, stats) lives here; repeatable content loops over `src/data/*.yml` (imported via
+  `@rollup/plugin-yaml`; types in [src/env.d.ts](src/env.d.ts)). It has its **own `<head>`** (it
+  does not use `BaseHead`). The subtle rotating background reads `public/img/bg/` at build time —
+  drop an image in and it joins the crossfade automatically.
+- **[public/css/style.css](public/css/style.css)** — the whole design system (CSS custom props in
+  `:root`, stacking cards, breakpoints at 900/820/760/620/560px). Shared by the portfolio **and**
+  blog pages. [src/styles/global.css](src/styles/global.css) adds blog-only styles (prose, post
+  list, series badge) on top of the same tokens.
+- **[public/scripts/index.js](public/scripts/index.js)** — vanilla-JS IIFE, loaded on every page:
+  pill-nav collapse/toggle, IntersectionObserver reveals, statement word highlight, CTA verb cycle,
+  `.js-years[data-since]` counter, `[data-page-size]` pagination. Fully null-guarded, so it's safe
+  on blog pages.
+- **Blog** — Astro content collection (`src/content/blog/<slug>/index.md` + colocated images).
+  Layout/pages: [src/layouts/BlogPost.astro](src/layouts/BlogPost.astro),
+  `src/pages/blog/index.astro` (listing), `[...slug].astro` (posts), `tags/[tag].astro`,
+  [sfdefacto.astro](src/pages/blog/sfdefacto.astro) (series landing at `/blog/sfdefacto/`, clay
+  branding). RSS at `/rss.xml`, sitemap via `@astrojs/sitemap`, `public/robots.txt`.
+- Shared components in `src/components/`: `BaseHead` (blog `<head>`: canonical, OG, favicons,
+  fonts), `Header` (same pill nav as the portfolio), `Footer`, `PostList`, `FormattedDate`.
+  Site-wide constants in [src/consts.ts](src/consts.ts).
 
-Section flow (top → bottom): floating pill **nav** → dark **hero** (photo with a CSS "glitch" swap, over a very subtle rotating Moroccan background) → **What I do + stats** → **Selected Work** (data-driven stacking cards) → **Speaking & Community** (data-driven, paginated card grids) → **About** (Moroccan-roots story + 3-photo polaroid collage) → **the journey so far** (data-driven experience timeline) → **CTA / footer**.
+### Data files (`src/data/`)
 
-- **[_layouts/main.html](_layouts/main.html)** — full page structure. Hardcoded copy lives here (hero, What-I-do statement, About prose); repeatable content is looped from `_data/*.yml` (see **Data files** below). The subtle rotating background is generated inline: a Liquid loop over `img/bg/` builds the `.site-bg` layers and an accompanying `@keyframes bg-cycle` whose timing is derived from the number of images.
-- **[css/style.css](css/style.css)** — all styling. Design system driven by CSS custom properties in `:root` (dark `--bg`/`--bg-2`/`--bg-3`, `--blue` accent, Moroccan `--clay`/`--clay-2`/`--mint`, `--font-sans: Inter`, `--font-script: Caveat`, `--max-w: 1200px` content cap). Sticky-positioned `.card`s create the stacking-cards effect. Responsive breakpoints: `@media (max-width: 900px)` (mobile nav, single-column cards, hero scrim), `820px` (timeline stacks vertically), `760px` (stats 2-up), `620px` (card grids → 1 column), `560px` (hero footer stacks).
-- **[scripts/index.js](scripts/index.js)** — one vanilla-JS IIFE (no framework). Handles: the mobile nav (**expanded inline at the top of the page, collapses to the 3-dot hamburger once scrolled** via a `.scrolled` class), IntersectionObserver reveal animations, the scroll-driven word-by-word statement highlight (`#statement`), CTA verb cycling (`#cycle`), the **dynamic years counter** (`.js-years[data-since]`, e.g. years since 2018), and **client-side pagination** for any `.talk-grid[data-page-size]` (shows N cards per page with `← 1 2 →` controls once the count exceeds the page size). The hero photo "glitch" swap and the background rotation are pure CSS/Liquid — no JS.
-- **External deps** are all CDN `<link>`s in the `<head>`: Google Fonts (Inter + Caveat) and Font Awesome 6.5.1. No local JS/CSS dependencies, no bundler.
+Same shapes as the old Jekyll `_data/` files; field docs are in comments at the top of each file.
 
-### Data files (`_data/`)
+- **[work.yml](src/data/work.yml)** — Selected Work cards (`year`, `title`, `tags[]`, `desc`,
+  `link`, `cta`, optional `icon`/`internal`/`accent`/`images[]`).
+- **[speaking.yml](src/data/speaking.yml)** — `conferences:` and `community:` lists (`event`/`org`,
+  `edition`, `location`, `topic`, optional `image`/`video`/`link`). Newest first; grids paginate at
+  6 via `data-page-size`.
+- **[experience.yml](src/data/experience.yml)** — timeline (`company`, `logo`, `role`, `location`,
+  `period`, optional `current`, `points[]` — basic HTML allowed, escape `&` as `&amp;`).
 
-Edit these to change content; the layout loops over them. Fields are documented in comments at the top of each file.
+### Blog post frontmatter schema
 
-- **[_data/work.yml](_data/work.yml)** — Selected Work cards. Per item: `year`, `title`, `tags[]`, `desc`, `link`, `cta`, optional `icon` (Font Awesome class), optional `internal: true` (on-page `#anchor` link → same tab), `accent` (`blue` | `clay`), optional `images[]`. If `images` is omitted the card art falls back to a large glyph of `icon`.
-- **[_data/speaking.yml](_data/speaking.yml)** — two lists: `conferences:` (featured Trailblazer Community Conferences) and `community:` (local/regional meetups & sessions). Both render as identical cards. Per item: `event`/`org`, `edition` (year, shown as a badge), `location` (city), `topic`, optional `image` (path in `img/speaking/`), optional `video` (shows a play button + "Watch"), optional `link`.
-- **[_data/experience.yml](_data/experience.yml)** — the "journey so far" timeline. Per role: `company`, `logo`, `role`, `location`, `period` (short phase label on the pill, e.g. "Now"/"Earlier"/"Started"), optional `current: true` (mint styling on the pill), `points[]` (highlights; basic HTML like `<strong>` allowed, escape `&` as `&amp;`).
+```yaml
+---
+title: "..."
+description: "..."          # 1–2 sentences, used for meta/OG/RSS
+pubDate: 2024-05-01         # original publish date — preserve it (ISO datetime for same-day ordering)
+updatedDate:                # optional
+tags: ["salesforce", ...]
+series: "sfdefacto"         # ONLY on SF DeFacto posts; omit otherwise
+mediumUrl: "https://..."    # original Medium URL, if syndicated
+heroImage: "./hero.jpg"     # optional, colocated file
+draft: false
+---
+```
 
-### Custom plugin: local-only customer injection
+Schema is enforced in [src/content.config.ts](src/content.config.ts). Images must be **local,
+colocated** in the post folder — never hot-link Medium CDN URLs.
 
-[_plugins/customers_injector.rb](_plugins/customers_injector.rb) registers a Jekyll `post_render` hook (uses `nokogiri`). For any element `[data-id="customers"][data-name="X"]`, it replaces the element's inner HTML with the contents of `customers/X-customers.html`. The `customers/` directory is **gitignored and absent** by default, so the injector is a **no-op** unless you create those local files. The current layout does not use `data-id="customers"` anchors, so this is dormant.
+## Publish flow (blog)
+
+1. Write the post at `src/content/blog/<slug>/index.md` (short kebab-case slug), images alongside.
+2. Push to `master` → GitHub Actions builds and deploys.
+3. **Medium is syndication-only**: optionally use Medium's *Import story* on the new tahabasri.com
+   URL afterwards — imports set the canonical back to this site. Never publish on Medium first.
+4. `docs/medium-redirect-map.md` tracks the old Medium posts that still need their "now lives at"
+   top-line edits (manual, on Medium).
+
+**No LinkedIn automation** — don't build it, don't scaffold for it.
 
 ## Assets
 
-`img/` is organised into subfolders — keep new assets in the right one and reference the full path:
+`public/` is served as-is at the site root; the `img/` subfolder layout is unchanged from the old
+site — keep new assets in the right subfolder and reference the full path:
 
-- `img/profile/` — `default.png` (main hero photo) and `alternative.png` (the shot that "glitches" over the default in the hero; both are clean cutouts, same framing/size).
-- `img/companies/` — company/tool logos (`comp_SALESFORCE_logo.png`, `comp_ORACLE_logo.png`, `comp_CGI_logo.png`). Rendered recoloured white via CSS.
-- `img/work/` — Selected Work images (e.g. `snippets.png`).
-- `img/speaking/` — talk photos/thumbnails for Speaking & Community cards. Convention: `YYYY-slug.ext` (e.g. `2025-nad.jpg`).
-- `img/bg/` — the subtle rotating background scenery (Moroccan scenes). **Fully dynamic:** drop any image in and it joins the crossfade automatically (no code change; timing recomputes from the file count).
-- `img/about/` — the 3 About polaroids: `then.JPG` (captioned "first tech"), `roots.jpg`, `now.JPG`.
-- `img/icons/` — small inline PNG icons used in labels/hero (`wave`, `uae`, `morocco` flags, `door`, `tarbouche`, `tea`).
-- `img/misc/` — one-offs (e.g. `collab.jpg`, used in the CTA frame).
-- `favicon_io/` — the generated favicon set (`.ico`, PNGs, `apple-touch-icon`, `site.webmanifest`), wired up in `<head>`.
+- `img/profile/` — hero photos (`default.png` + `alternative.png` glitch shot).
+- `img/companies/` — company logos (recoloured white via CSS).
+- `img/work/` — Selected Work images. · `img/speaking/` — talk photos (`YYYY-slug.ext`).
+- `img/bg/` — rotating background scenery (fully dynamic, timing recomputes from file count).
+- `img/about/` — the 3 About polaroids. · `img/icons/` — small inline icons. · `img/misc/` — one-offs.
+- `favicon/` + root `favicon.ico` — favicon set, wired in both heads.
+- `CNAME` (tahabasri.com) lives in `public/` — required for the custom domain; don't remove.
 
-Fonts are Inter (`--font-sans`) and Caveat (`--font-script`); icons are Font Awesome 6.5.1 — all via CDN.
+Fonts (Inter, Space Grotesk, Caveat) and Font Awesome 6.5.1 are CDN links in the heads.
 
-Content is **real** (drawn from Taha's résumé and Salesforce career doc), with two caveats: some `edition` years on `community:` entries in `speaking.yml` are best-guess placeholders (adjust when known), and `img/about/then.JPG`/`roots.jpg`/`now.JPG` are the intended photos — replace freely.
+## Deployment
 
-## Syncing content (the common edits)
-
-Most updates are **YAML edits + drop an image in the matching folder**, then rebuild. GitHub Pages rebuilds on push to `gh-pages`; locally, `jekyll build` (or `jekyll serve`).
-
-### Add a new speaking event or community session
-1. Drop the photo in `img/speaking/` using the `YYYY-slug.ext` convention (optional — an entry with no `image` renders a placeholder glyph).
-2. Add an entry to [_data/speaking.yml](_data/speaking.yml):
-   - A **Trailblazer Community Conference** → under `conferences:` (fields: `event`, `edition`, `location`, `topic`, `image`, optional `video`/`link`).
-   - A **meetup / local or regional session** → under `community:` (fields: `org`, `edition`, `location`, `topic`, `image`, optional `video`/`link`).
-   - Order matters — the list renders top-to-bottom; put newest first. Keep `topic` free of em dashes (site convention: use `:` or a comma).
-3. Rebuild. The card appears automatically; each grid **paginates at 6 items** (`data-page-size="6"` on the `.talk-grid`), so no layout work is needed as the list grows. Adjust the count in the `SPEAKING & COMMUNITY` intro copy in `main.html` if you reference an exact number (e.g. "Six … Conferences").
-
-### Add / update a Selected Work item
-Edit [_data/work.yml](_data/work.yml); add the image to `img/work/` and reference it in `images[]` (or omit `images` to use the `icon` glyph). Set `internal: true` if `link` is an on-page anchor.
-
-### Add / update an experience role
-Edit [_data/experience.yml](_data/experience.yml). The timeline alternates up/down automatically and stacks on mobile; set `current: true` on the present role and give each a short `period` pill label.
-
-### Other content
-Hero headline/sub, the "What I do" statement, About prose, stats (`8+ years`, `3 companies`), and the "Based in Dubai · from Morocco" line are hardcoded in [_layouts/main.html](_layouts/main.html). The years figure auto-updates via `.js-years[data-since="2018"]`.
+- Pages source is **GitHub Actions** (repo Settings → Pages), custom domain `tahabasri.com`,
+  HTTPS enforced. DNS is on Cloudflare, grey-clouded — leave it grey-clouded.
+- Don't force-push. Don't delete the `legacy-site` branch.
 
 ## Responsive / verifying visually
 
-The site is tuned for desktop, tablet, and mobile. When testing headless-Chrome screenshots on Windows, note the layout viewport is **pinned to a ~484px minimum** regardless of a smaller `--window-size` — capture at window width 484 for an accurate "mobile" view and ≥768 for tablet, rather than 360–390 (which just crops the 484 layout and looks like false overflow). `body` has `overflow-x: hidden`, so genuine overflow is clipped, not scrollable — verify with `scrollWidth === clientWidth`.
+Tuned for desktop, tablet and mobile. When testing headless-Chrome screenshots on Windows, the
+layout viewport is pinned to a ~484px minimum regardless of a smaller `--window-size` — capture at
+width 484 for "mobile" and ≥768 for tablet. `body` has `overflow-x: hidden`, so verify genuine
+overflow with `scrollWidth === clientWidth`. Viewport-height sections (hero) stretch in very tall
+full-page captures; prefer normal window heights per section. Reveal animations mean anchors can
+capture before content fades in — use `--virtual-time-budget`.

@@ -1,7 +1,7 @@
 ---
 title: "SF DeFacto #3 — Buyer Group Extensibility for Commerce"
 description: "How to implement Buyer Group Extensibility in Salesforce Commerce (Summer '25 Release) to dynamically assign shoppers to buyer groups based on custom Apex logic."
-pubDate: 2025-07-06
+pubDate: 2025-07-06T00:28:06Z
 tags: ["salesforce", "commerce-cloud", "apex", "extensibility"]
 series: "sfdefacto"
 mediumUrl: "https://medium.com/@tahabasri/sf-defacto-3-buyer-group-extensibility-for-commerce-efa2c403e042"

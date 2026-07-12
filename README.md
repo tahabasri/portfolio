@@ -1,45 +1,30 @@
-# Portfolio Project
+# tahabasri.com
 
-This repository contains the code for my personal portfolio website: https://tahabasri.com
+Personal site of Taha Basri — portfolio + blog, one [Astro](https://astro.build) static site at
+https://tahabasri.com (blog at [/blog](https://tahabasri.com/blog), RSS at
+[/rss.xml](https://tahabasri.com/rss.xml)).
 
-## Quick Start
-
-To run the website locally:
+## Quick start
 
 ```bash
-bundle install
-gem install jekyll
-jekyll build
-jekyll serve
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # outputs dist/
+npm run preview  # serve the build
 ```
 
-## Portfolio Website
+## Layout
 
-The portfolio website is built as a Jekyll-based static site that showcases my work, skills, and contact information.
+- `profile.md` — single source of truth for bio, talks, milestones, projects
+- `src/pages/index.astro` — portfolio home (design system in `public/css/style.css`)
+- `src/data/*.yml` — work / speaking / experience content driving the portfolio sections
+- `src/content/blog/<slug>/` — blog posts (markdown + colocated images)
+- `.github/workflows/deploy.yml` — builds and deploys to GitHub Pages on push to `master`
 
-### Structure
+See [CLAUDE.md](CLAUDE.md) for the full contributor guide. The previous Jekyll version of the site
+is preserved on the `legacy-site` branch.
 
-- **`_layouts/main.html`**: Main layout template for the portfolio homepage
-- **`css/style.css`**: Custom stylesheet for the portfolio design
-- **`img/`**: Images used throughout the portfolio
-- **`scripts/index.js`**: JavaScript functionality for the portfolio
-- **`_config.yml`**: Jekyll configuration file
-- **`index.md`**: Entry point for the website using the main layout
-- **`_site/`**: Generated static site (created by Jekyll build)
+## Credits
 
-### Features
-
-- **Responsive Design**: Adapts to different screen sizes for optimal viewing
-- **Animated Elements**: Uses Animate.css for smooth animations and transitions
-- **Social Media Integration**: Links to professional profiles and platforms
-- **Interactive Sections**: About, Work, and Contact sections
-- **Modern UI**: Clean, professional layout with intuitive navigation
-
-### Technologies Used
-
-- [Jekyll](https://jekyllrb.com): Static site generator that powers both portfolio and resume
-- [GitHub Pages](https://pages.github.com): Hosting platform for the website
-- [jQuery](https://jquery.com/): Used for DOM manipulation throughout the project
-- [Bootstrap](https://getbootstrap.com/): Frontend framework for responsive design
-- [Font Awesome](https://fontawesome.com/): Icon library for social media and UI elements
-- [Animate.css](https://animate.style/): Library for smooth animations and transitions
+- Favicon generated with [favicon.io](https://favicon.io/favicon-generator/)
+- Design inspired by [mattdavella.com](https://www.mattdavella.com/)
