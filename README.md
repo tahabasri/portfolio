@@ -23,8 +23,3 @@ npm run preview  # serve the build
 
 See [CLAUDE.md](CLAUDE.md) for the full contributor guide. The previous Jekyll version of the site
 is preserved on the `legacy-site` branch.
-
-## Credits
-
-- Favicon generated with [favicon.io](https://favicon.io/favicon-generator/)
-- Design inspired by [mattdavella.com](https://www.mattdavella.com/)
