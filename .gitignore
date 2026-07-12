@@ -1,7 +1,23 @@
-.jekyll-cache
-_site
-node_modules
-*.lock
-.vscode
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# environment
+.env
+.env.production
+
+# editor / os
+.vscode/
+.DS_Store
+
+# local-only customer content (never committed)
 customers/**
+
+# migration working files
+docs/medium-export.zip
+medium-export/
+
 .claude
