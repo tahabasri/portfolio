@@ -12,6 +12,7 @@ const { date } = Astro.props;
 			year: 'numeric',
 			month: 'short',
 			day: 'numeric',
+			timeZone: 'UTC', // frontmatter dates are UTC — keep display independent of build machine TZ
 		})
 	}
 </time>

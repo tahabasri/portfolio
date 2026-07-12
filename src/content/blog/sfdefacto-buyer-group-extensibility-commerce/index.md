@@ -69,7 +69,7 @@ insert new RegisteredExternalService(
 
 To demonstrate the capabilities of Buyer Group Extensibility, here is a sample setup of a Customer Store selling Coffee Machines Worldwide:
 
-![Sample buyer group setup for a store selling coffee machines worldwide](./use-case-setup.png)
+![Sample buyer group setup for a store selling coffee machines worldwide](./use-case-setup.png "white-bg")
 
 - **Global Buyer Group** will include all users (authenticated and/or guests)-who are not from USA or Canada. These users will be able to see the products available without prices displayed.
 - **CA Buyer Group** will include all users in Canada. They will be able to see all products with prices displayed.
@@ -81,13 +81,13 @@ This new change is problematic because the Buyer Group setup we did earlier is *
 
 The Extensibility framework will provide an additional layer on top of the static setup to dynamically override the buyer groups based on shopper actions. In our case, one of the actions we're interested in is updating the Country field of the ContactPointAddress record.
 
-![The extensibility layer dynamically overriding the static buyer group setup](./dynamic-override-diagram.png)
+![The extensibility layer dynamically overriding the static buyer group setup](./dynamic-override-diagram.png "white-bg")
 
 ## Implementation
 
 Let's implement the custom logic that overrides the Buyer Group setup based on the ContactPointAddress Country. We will explain some key concepts that are essential when designing the Buyer Group Evaluation Service.
 
-The following class is a result of adjustments made to the original Sample [BuyerGroupEvaluationServiceSample](https://github.com/forcedotcom/commerce-extensibility/blob/main/commerce/domain/buyergroup/service/classes/BuyerGroupEvaluationServiceSample.cls) class provided by Salesforce. You can find the full adjusted class [here](https://github.com/tahabasri/Salesforce-DeFacto/blob/main/CommerceCloud/BuyerGroupExtensibility/rsc/BuyerGroupEvaluationServiceSample.cls).
+The following class is a result of adjustments made to the original Sample [BuyerGroupEvaluationServiceSample](https://github.com/forcedotcom/commerce-extensibility/blob/main/commerce/domain/buyergroup/service/classes/BuyerGroupEvaluationServiceSample.cls) class provided by Salesforce. You can find the full adjusted class [here](/files/blog/sfdefacto-buyer-group-extensibility-commerce/BuyerGroupEvaluationServiceSample.cls).
 
 We will start with implementing the inherited function [commercebuygrp.BuyerGroupResponse getBuyerGroupIds(commercebuygrp.BuyerGroupRequest request)](https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_class_CommerceBuyGrp_BuyerGroupEvaluationService.htm#apex_CommerceBuyGrp_BuyerGroupEvaluationService_getBuyerGroupIds)
 

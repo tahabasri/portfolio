@@ -121,13 +121,13 @@ You can think of Process as Code an upgrade to your current process, it does not
 
 Process as Code can be implemented via two modes.
 
-![Mode one: a single application handling the whole process](./pac-single-app.png)
+![Mode one: a single application handling the whole process](./pac-single-app.png "white-bg")
 
 You can opt for a new single application to help you with all your process. This application which will be developed depending on your needs can do the exact actions you do manually using code.
 
 Because you can't just go there and implement a new giant application inside your organization, given the size of your company, the current challenges and the complexity of achieving such design, we don't recommend this option. Still, it may be useful for small sized teams or startups.
 
-![Mode two: process helpers between your team and its tools](./pac-process-helpers.png)
+![Mode two: process helpers between your team and its tools](./pac-process-helpers.png "white-bg")
 
 The second option comes in handy when you already have tools running and usable by your team, this is the typical situation when you may need PaC. Even if it seems that you already have programs running and doing tasks for you, you are either triggering these tools manually, or feeding data to them by hand (keyboard and mouse).
 
@@ -161,7 +161,7 @@ Integrating technologies as we previously defined needs approvals and studies in
 
 On the other hand, PaC comes to the rescue giving you the possibility to define the behavior of your applications on your own terms using whatever technology you prefer.
 
-![Process as Code: versioned, testable, maintainable, automated](./pac-summary.png)
+![Process as Code: versioned, testable, maintainable, automated](./pac-summary.png "white-bg")
 
 To summarize, Process as Code is the optimal solution when you need to have a **versioned**, **testable**, **maintainable** and fully **automated** process.
 

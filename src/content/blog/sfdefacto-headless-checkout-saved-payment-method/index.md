@@ -30,7 +30,7 @@ This niche use case may be necessary if the following business requirements appl
 
 ## Postman Collection
 
-Import the following collection to access the APIs mentioned in this solution: [Headless Commerce APIs.postman_collection.json](https://salesforce-defacto.tahabasri.com/SalesforcePayments/HeadlessCommerceCheckoutWithSpm/assets/Headless%20Commerce%20APIs.postman_collection.json).
+Import the following collection to access the APIs mentioned in this solution: [Headless Commerce APIs.postman_collection.json](/files/blog/sfdefacto-headless-checkout-saved-payment-method/headless-commerce-apis.postman_collection.json).
 
 ## Headless Commerce Checkout Process with Saved Payment Method (Salesforce Payments)
 

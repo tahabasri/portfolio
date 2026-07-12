@@ -7,7 +7,7 @@
 
 /* ---------- page shell ---------- */
 .blog-main {
-	max-width: 760px;
+	max-width: 880px;
 	margin: 0 auto;
 	padding: calc(var(--nav-h) + 72px) var(--pad-x) 96px;
 }
@@ -171,9 +171,15 @@ a.series-badge:hover {
 	font-style: italic;
 }
 .prose img {
+	height: auto; /* width/height attrs + max-width:100% would otherwise distort */
 	border-radius: 12px;
 	border: 1px solid var(--line-soft);
 	margin: 1.6em auto;
+}
+/* transparent diagrams authored for light backgrounds — see rehypeWhiteBg in astro.config.mjs */
+.prose img.img-white-bg {
+	background: #fff;
+	padding: 14px;
 }
 .prose figure {
 	margin: 1.6em 0;
@@ -204,6 +210,45 @@ a.series-badge:hover {
 	font-size: 14px;
 	line-height: 1.6;
 	margin: 1.6em 0;
+}
+/* code copy button (wrapper + button injected by /scripts/blog.js) */
+.code-wrap {
+	position: relative;
+	margin: 1.6em 0;
+}
+.code-wrap pre {
+	margin: 0;
+}
+.code-copy {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 34px;
+	height: 30px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid var(--line);
+	border-radius: 8px;
+	color: var(--muted-soft);
+	cursor: pointer;
+	font-size: 13px;
+	opacity: 0;
+	transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.code-wrap:hover .code-copy,
+.code-copy:focus-visible,
+.code-copy.copied {
+	opacity: 1;
+}
+.code-copy:hover {
+	background: rgba(77, 159, 255, 0.18);
+	color: var(--ink-2);
+}
+.code-copy.copied {
+	color: var(--mint, #7fd8be);
+	border-color: currentColor;
 }
 .prose pre code {
 	background: none;

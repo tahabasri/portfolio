@@ -20,10 +20,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
 		<Header />
 		<main class="blog-main">
 			<header class="blog-head">
-				<h1 class="big-title left">notes on code &amp; craft</h1>
+				<h1 class="big-title left">Taha's notes on <em>software crafting</em></h1>
 				<p class="muted">
-					Long-form writing on Salesforce commerce, LWR, process-as-code and developer experience.
-					Includes the <a class="series-badge" href="/blog/sfdefacto/">SF DeFacto</a> series.
+					Patterns, lessons and the occasional deep dive from years of building, shipping and
+					teaching software. Home of the <a class="series-badge" href="/blog/sfdefacto/">SF DeFacto</a> series.
 				</p>
 			</header>
 			<PostList posts={posts} />
